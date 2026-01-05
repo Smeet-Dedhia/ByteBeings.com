@@ -1,0 +1,98 @@
+{
+  "name": "Your Name",
+  "headline": "Software Engineer & Developer",
+  "summary": "Passionate software engineer with expertise in building modern web applications. I love creating elegant solutions to complex problems and sharing knowledge through writing and open-source contributions.",
+  "location": "San Francisco, CA",
+  "links": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "website": "https://yourwebsite.com",
+    "email": "your.email@example.com"
+  },
+  "experience": [
+    {
+      "role": "Senior Software Engineer",
+      "company": "Tech Company Inc.",
+      "location": "San Francisco, CA",
+      "startDate": "2022-01",
+      "endDate": null,
+      "description": [
+        "Led development of customer-facing web applications using Next.js and TypeScript",
+        "Architected and implemented scalable backend services handling millions of requests",
+        "Mentored junior developers and established coding best practices",
+        "Collaborated with cross-functional teams to deliver features on time"
+      ],
+      "technologies": ["Next.js", "TypeScript", "React", "Node.js", "PostgreSQL"]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Startup Co.",
+      "location": "Remote",
+      "startDate": "2020-06",
+      "endDate": "2021-12",
+      "description": [
+        "Built and maintained full-stack web applications",
+        "Implemented CI/CD pipelines reducing deployment time by 50%",
+        "Optimized database queries improving application performance by 40%"
+      ],
+      "technologies": ["React", "Python", "Django", "AWS", "Docker"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University Name",
+      "location": "City, State",
+      "startDate": "2016-09",
+      "endDate": "2020-05",
+      "description": [
+        "Relevant coursework: Data Structures, Algorithms, Software Engineering",
+        "Dean's List: Fall 2018, Spring 2019"
+      ],
+      "gpa": "3.8/4.0"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project Name",
+      "description": "A brief description of what this project does and why it's interesting.",
+      "url": "https://project-demo.com",
+      "githubUrl": "https://github.com/yourusername/project",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "highlights": [
+        "Built with modern web technologies",
+        "Deployed on Vercel with CI/CD",
+        "Open source and available on GitHub"
+      ]
+    },
+    {
+      "name": "Another Project",
+      "description": "Another interesting project description.",
+      "githubUrl": "https://github.com/yourusername/another-project",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "highlights": [
+        "Real-time features using WebSockets",
+        "Responsive design for all devices"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "skills": ["TypeScript", "JavaScript", "Python", "Java", "Go"]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "skills": ["Next.js", "React", "Node.js", "Express", "Django"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "skills": ["Git", "Docker", "AWS", "PostgreSQL", "MongoDB", "Redis"]
+    }
+  ],
+  "meta": {
+    "updatedAt": "2024-01-01",
+    "version": "1.0.0"
+  }
+}
+
