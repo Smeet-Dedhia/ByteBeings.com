@@ -11,7 +11,10 @@ export default async function BlogPage() {
   return (
     <div className="container mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <MotionSection className="mb-12">
-        <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1 
+          className="heading-shine mb-4 text-4xl font-bold tracking-tight sm:text-5xl"
+          style={{ '--shine-duration': '2.5s' } as React.CSSProperties}
+        >
           Blog
         </h1>
         <p className="text-xl text-muted-foreground">

@@ -16,7 +16,7 @@ export default function PortfolioPage() {
     <div className="container mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <MotionSection className="mb-12">
         <FadeIn>
-          <h1 className="portfolio-title font-medium leading-tight mb-2 sm:mb-3 text-center sm:text-left">
+          <h1 className="heading-shine portfolio-title font-medium leading-tight mb-2 sm:mb-3 text-center sm:text-left">
             A proud showcase of my Projects
           </h1>
           <p className="text-2xl sm:text-3xl md:text-4xl font-medium leading-tight mb-5 text-center sm:text-left">

@@ -13,7 +13,10 @@ export default async function ResumePage() {
       {/* Header Section */}
       <MotionSection className="mb-12">
         <div className="mb-6">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 
+            className="heading-shine text-4xl font-bold tracking-tight sm:text-5xl"
+            style={{ '--shine-duration': `${Math.max(2.5, Math.min(5, resume.name.length * 0.15))}s` } as React.CSSProperties}
+          >
             {resume.name}
           </h1>
           <p className="mt-2 text-xl text-muted-foreground">{resume.headline}</p>

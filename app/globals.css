@@ -220,7 +220,6 @@ body {
   max-width: 100%;
   font-weight: 500;
   color: inherit;
-  font-size: inherit; /* Inherit from parent text size */
   font-size: 1.05em;
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
               opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -293,9 +292,7 @@ body {
   .portfolio-title {
     font-size: 1.7rem;
   }
-}
 
-@media (max-width: 768px) {
   .portfolio-line {
     white-space: normal;
     flex-wrap: wrap;
@@ -375,3 +372,223 @@ body {
     opacity: 1;
   }
 }
+
+/* ============================================
+   Premium Heading Shine Effect
+   A subtle, minimal light sweep animation
+   ============================================ */
+
+.heading-shine {
+  /* Timing: ~3s sweep + ~2s pause = 5s total cycle (adjustable via inline style) */
+  --shine-duration: 5s;
+  --shine-delay: 1s;
+  --shine-angle: 110deg;
+  
+  position: relative;
+  display: inline-block;
+  color: var(--color-foreground);
+  background: linear-gradient(
+    var(--shine-angle),
+    var(--color-foreground) 0%,
+    var(--color-foreground) 48%,
+    #b8860b 49%,
+    #ffd700 50%,
+    #b8860b 51%,
+    var(--color-foreground) 52%,
+    var(--color-foreground) 100%
+  );
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heading-shine-sweep var(--shine-duration) linear var(--shine-delay) infinite;
+}
+
+/* Glowing underline that appears after shine completes - expands from right */
+.heading-shine::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 215, 0, 0.8) 15%,
+    rgba(255, 215, 0, 0.9) 50%,
+    rgba(218, 165, 32, 0.7) 100%
+  );
+  filter: blur(0.5px);
+  box-shadow: 
+    0 0 6px rgba(255, 215, 0, 0),
+    0 0 12px rgba(255, 215, 0, 0);
+  pointer-events: none;
+  animation: heading-underline-glow var(--shine-duration) ease-out var(--shine-delay) infinite;
+}
+
+/* Periodic animation: sweep once (~3s), then pause (~2s) before repeating */
+@keyframes heading-shine-sweep {
+  0% {
+    background-position: 100% 0;
+  }
+  60% {
+    background-position: 0% 0;
+  }
+  60.1%, 100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Glowing underline that expands from right (where shine ended) */
+@keyframes heading-underline-glow {
+  0%, 59% {
+    width: 0%;
+    opacity: 0;
+    box-shadow: 
+      0 0 6px rgba(255, 215, 0, 0),
+      0 0 12px rgba(255, 215, 0, 0);
+  }
+  /* Instant appear at shine end */
+  60% {
+    width: 10%;
+    opacity: 1;
+    box-shadow: 
+      0 0 8px rgba(255, 215, 0, 0.5),
+      0 0 16px rgba(255, 215, 0, 0.3);
+  }
+  /* Fast expand to full width */
+  65% {
+    width: 100%;
+    opacity: 0.9;
+    box-shadow: 
+      0 0 8px rgba(255, 215, 0, 0.4),
+      0 0 14px rgba(255, 215, 0, 0.25);
+  }
+  /* Quick fade */
+  75% {
+    width: 100%;
+    opacity: 0.5;
+    box-shadow: 
+      0 0 6px rgba(255, 215, 0, 0.2),
+      0 0 10px rgba(255, 215, 0, 0.1);
+  }
+  /* Fade out completely */
+  88%, 100% {
+    width: 100%;
+    opacity: 0;
+    box-shadow: 
+      0 0 4px rgba(255, 215, 0, 0),
+      0 0 8px rgba(255, 215, 0, 0);
+  }
+}
+
+/* Dark mode adjustments - brighter gold for dark backgrounds */
+@media (prefers-color-scheme: dark) {
+  .heading-shine {
+    background: linear-gradient(
+      var(--shine-angle),
+      var(--color-foreground) 0%,
+      var(--color-foreground) 48%,
+      #daa520 49%,
+      #ffd700 50%,
+      #daa520 51%,
+      var(--color-foreground) 52%,
+      var(--color-foreground) 100%
+    );
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  /* Brighter underline glow in dark mode */
+  .heading-shine::after {
+    animation-name: heading-underline-glow-dark;
+  }
+}
+
+/* Enhanced underline glow for dark mode - expands from right */
+@keyframes heading-underline-glow-dark {
+  0%, 59% {
+    width: 0%;
+    opacity: 0;
+    box-shadow: 
+      0 0 6px rgba(255, 215, 0, 0),
+      0 0 14px rgba(255, 215, 0, 0);
+  }
+  /* Instant appear at shine end */
+  60% {
+    width: 10%;
+    opacity: 1;
+    box-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.6),
+      0 0 20px rgba(255, 215, 0, 0.35);
+  }
+  /* Fast expand to full width */
+  65% {
+    width: 100%;
+    opacity: 0.95;
+    box-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.5),
+      0 0 18px rgba(255, 215, 0, 0.3);
+  }
+  /* Quick fade */
+  75% {
+    width: 100%;
+    opacity: 0.55;
+    box-shadow: 
+      0 0 7px rgba(255, 215, 0, 0.25),
+      0 0 12px rgba(255, 215, 0, 0.12);
+  }
+  /* Fade out completely */
+  88%, 100% {
+    width: 100%;
+    opacity: 0;
+    box-shadow: 
+      0 0 4px rgba(255, 215, 0, 0),
+      0 0 8px rgba(255, 215, 0, 0);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .heading-shine {
+    animation: none;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--color-foreground);
+  }
+  
+  .heading-shine::after {
+    display: none;
+  }
+}
+
+/* Global disable class - add to <html> or <body> to disable all shine effects */
+.no-heading-shine .heading-shine,
+.heading-shine.no-animate {
+  animation: none;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: var(--color-foreground);
+}
+
+.no-heading-shine .heading-shine::after,
+.heading-shine.no-animate::after {
+  display: none;
+}
+
+/* 
+   CUSTOMIZATION:
+   --shine-duration: 5s (total cycle: ~3s sweep + ~2s pause)
+   --shine-delay: 1s (initial delay before first animation)
+   --shine-angle: 110deg (90=vertical, 110=slanted forward, 70=backward)
+   
+   Per-element: style="--shine-duration: 2.5s" for shorter text
+*/
