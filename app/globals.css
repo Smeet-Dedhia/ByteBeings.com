@@ -664,3 +664,198 @@ body {
     filter: blur(14px);
   }
 }
+
+/* ============================================
+   Psst Component - Floating Whisper Annotation
+   ============================================ */
+
+.psst {
+  /* Positioning - doesn't occupy document flow */
+  --psst-top: auto;
+  --psst-right: auto;
+  --psst-bottom: auto;
+  --psst-left: auto;
+  
+  position: absolute;
+  top: var(--psst-top);
+  right: var(--psst-right);
+  bottom: var(--psst-bottom);
+  left: var(--psst-left);
+  z-index: 50;
+  
+  /* Reset */
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  
+  /* Don't block main content */
+  pointer-events: auto;
+}
+
+.psst--fixed {
+  position: fixed;
+}
+
+.psst--absolute {
+  position: absolute;
+}
+
+/* Position presets */
+.psst--top-right {
+  --psst-top: 1rem;
+  --psst-right: 1rem;
+}
+
+.psst--top-left {
+  --psst-top: 1rem;
+  --psst-left: 1rem;
+}
+
+.psst--bottom-right {
+  --psst-bottom: 1rem;
+  --psst-right: 1rem;
+}
+
+.psst--bottom-left {
+  --psst-bottom: 1rem;
+  --psst-left: 1rem;
+}
+
+/* Label - always visible */
+.psst__label {
+  display: inline-block;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--color-foreground);
+  opacity: 1;
+  transition: opacity 200ms ease;
+  white-space: nowrap;
+}
+
+/* Content - hidden by default */
+.psst__content {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 12rem;
+  max-width: 18rem;
+  padding: 0.75rem 1rem;
+  
+  /* Soft rounded container */
+  background: var(--color-popover);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.04);
+  
+  /* Typography */
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-popover-foreground);
+  
+  /* Hidden state - smooth fade/scale */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px) scale(0.98);
+  transform-origin: top left;
+  transition: 
+    opacity 200ms ease,
+    visibility 200ms ease,
+    transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Prevent blocking when hidden */
+  pointer-events: none;
+}
+
+/* Adjust content position for right-aligned variants */
+.psst--top-right .psst__content,
+.psst--bottom-right .psst__content {
+  left: auto;
+  right: 0;
+  transform-origin: top right;
+}
+
+/* Adjust content position for bottom variants */
+.psst--bottom-right .psst__content,
+.psst--bottom-left .psst__content {
+  top: auto;
+  bottom: calc(100% + 0.5rem);
+  transform-origin: bottom left;
+}
+
+.psst--bottom-right .psst__content {
+  transform-origin: bottom right;
+}
+
+/* ============================================
+   Desktop: Hover to reveal
+   ============================================ */
+@media (hover: hover) {
+  .psst:hover .psst__label,
+  .psst:focus-visible .psst__label {
+    opacity: 1;
+  }
+  
+  .psst:hover .psst__content,
+  .psst:focus-visible .psst__content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+}
+
+/* ============================================
+   Mobile: Tap to reveal (JS-controlled)
+   ============================================ */
+@media (hover: none) {
+  .psst__label {
+    /* Slightly larger tap target on mobile */
+    padding: 0.25rem;
+    margin: -0.25rem;
+  }
+  
+  .psst--open .psst__label {
+    opacity: 1;
+  }
+  
+  .psst--open .psst__content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+}
+
+/* Focus ring for accessibility */
+.psst:focus-visible .psst__label {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .psst__content {
+    box-shadow: 
+      0 4px 16px rgba(0, 0, 0, 0.3),
+      0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .psst__content {
+    transition: opacity 100ms ease, visibility 100ms ease;
+    transform: none;
+  }
+  
+  .psst:hover .psst__content,
+  .psst:focus-visible .psst__content,
+  .psst--open .psst__content {
+    transform: none;
+  }
+}

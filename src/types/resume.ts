@@ -12,6 +12,7 @@ export interface ExperienceItem {
   description: string[]
   technologies?: string[]
   logo?: string // path to company logo
+  psst?: string // optional whisper/trivia text
 }
 
 export interface EducationItem {
@@ -23,6 +24,7 @@ export interface EducationItem {
   description?: string[]
   gpa?: string
   logo?: string // path to institution logo
+  psst?: string // optional whisper/trivia text
 }
 
 export interface ProjectItem {

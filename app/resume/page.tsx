@@ -3,6 +3,7 @@ import { getResume } from "@/lib/resume"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { MotionSection, FadeIn } from "@/components/motion"
+import { Psst } from "@/components/psst"
 import { Github, Linkedin, Mail, Globe, MapPin, Calendar, Code2, Trophy, FileDown } from "lucide-react"
 
 export default async function ResumePage() {
@@ -110,7 +111,7 @@ export default async function ResumePage() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium transition-colors hover:bg-primary/90"
               >
                 <Globe className="h-4 w-4" />
-                Project Portfolio →
+                Projects Portfolio →
               </Link>
             </div>
           </div>
@@ -121,7 +122,13 @@ export default async function ResumePage() {
             <div className="grid gap-4 grid-cols-2">
               {resume.education.map((edu, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
-                  <Card className="h-full transition-shadow hover:shadow-lg">
+                  <Card className="h-full transition-shadow hover:shadow-lg relative overflow-visible">
+                    {/* Psst whisper from data */}
+                    {edu.psst && (
+                      <Psst position="top-right" style={{ '--psst-top': '0.5rem', '--psst-right': '0.5rem' } as React.CSSProperties}>
+                        {edu.psst}
+                      </Psst>
+                    )}
                     <CardContent className="p-4 flex flex-col items-center text-center">
                       {/* Logo */}
                       {edu.logo ? (
@@ -185,7 +192,13 @@ export default async function ResumePage() {
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row gap-6">
                     {/* Left Column - Logo & Info */}
-                    <div className="md:w-56 shrink-0 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div className="md:w-56 shrink-0 flex flex-col items-center md:items-start text-center md:text-left relative">
+                      {/* Psst whisper from data */}
+                      {exp.psst && (
+                        <Psst position="top-right" style={{ '--psst-top': '0', '--psst-right': '0' } as React.CSSProperties}>
+                          {exp.psst}
+                        </Psst>
+                      )}
                       {/* Logo */}
                       {exp.logo ? (
                         <img

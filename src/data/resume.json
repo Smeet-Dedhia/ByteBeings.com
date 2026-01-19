@@ -87,6 +87,7 @@
       "startDate": "Jul 2022",
       "endDate": "Jul 2023",
       "logo": "/logos/1689095453140.jpg",
+      "psst": "My entry into startup culture, fund raising & hustling",
       "description": [
         "As a board member, involved with Funding, Planning and Managing 40+ team members",
         "As AI Head, guided the AI team of 10 to deploy Computer Vision applications for drones"
@@ -96,13 +97,14 @@
   ],
   "education": [
     {
-      "degree": "Master of Science, Data Science",
+      "degree": "Master of Science (MS), Data Science",
       "institution": "University of Washington",
       "location": "Seattle, WA, USA",
       "startDate": "Sep 2024",
       "endDate": "Mar 2026",
       "gpa": "3.9 GPA",
-      "logo": "/logos/university_of_washington_logo.jpg"
+      "logo": "/logos/university_of_washington_logo.jpg",
+      "psst": "Graduating in March'26. Looking for full-time roles from May!"
     },
     {
       "degree": "B.Tech Data Science & Engineering",
@@ -114,7 +116,8 @@
         "Minors in Finance & Portfolio Management"
       ],
       "gpa": "3.9 GPA",
-      "logo": "/logos/manipal_institute_of_technology_logo.jpg"
+      "logo": "/logos/manipal_institute_of_technology_logo.jpg",
+      "psst": "The same Uni MSFT CEO Satya Nadella went to..."
     }
   ],
   "projects": [
