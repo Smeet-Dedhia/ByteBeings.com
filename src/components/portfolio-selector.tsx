@@ -26,8 +26,8 @@ export function PortfolioSelector({
     const container = containerRef.current
     if (!container) return
 
-    const viewport = container.querySelector(".selector-viewport")
-    const track = viewport?.querySelector(".selector-track")
+    const viewport = container.querySelector(".selector-viewport") as HTMLElement | null
+    const track = viewport?.querySelector(".selector-track") as HTMLElement | null
     if (!viewport || !track) return
 
     track.innerHTML = ""
