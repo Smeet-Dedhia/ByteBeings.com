@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   return (
@@ -20,43 +20,75 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.h1
-            className="bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl md:text-7xl lg:text-8xl"
+          <motion.p
+            className="text-base text-muted-foreground sm:text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Welcome to My
-            <br />
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Digital Space
-            </span>
-          </motion.h1>
+            Hi there! I&apos;m{" "}
+            <Link 
+              href="/resume" 
+              className="relative inline-block text-foreground hover:text-foreground/80 transition-colors"
+            >
+              <span className="relative">
+                Smeet
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-yellow-400 shadow-[0_0_8px_2px_rgba(250,204,21,0.6)]" />
+              </span>
+            </Link>
+            .
+          </motion.p>
+          <motion.p
+            className="mt-2 text-lg text-muted-foreground sm:text-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.12 }}
+          >
+            Welcome to my website:
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          className="mt-4 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        >
+          <Image
+            src="/logos/ByteBeings-logo-new.png"
+            alt="ByteBeings"
+            width={600}
+            height={240}
+            className="h-auto w-[320px] sm:w-[450px] md:w-[550px] lg:w-[600px]"
+            priority
+          />
         </motion.div>
 
         <motion.p
-          className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl"
+          className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground sm:text-2xl md:text-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Exploring ideas, building projects, and sharing insights. A blog for
-          my thoughts and a portfolio showcasing my work.
+          A space where I share my thoughts about{" "}
+          <span className="font-bold text-foreground">everything that exists as bytes</span>
+          {" "}—{" "}
+          <span className="relative inline-block">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">
+              from data to software to AI
+            </span>
+            <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 shadow-[0_0_10px_2px_rgba(168,85,247,0.6)]" />
+          </span>
+          .
         </motion.p>
 
         <motion.div
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-10 flex items-center justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Button asChild size="lg" className="group">
-            <Link href="/resume">
-              View Resume
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
+          <Button asChild size="lg" className="bg-white text-black hover:bg-white/90">
             <Link href="/blog">Read Blog</Link>
           </Button>
         </motion.div>

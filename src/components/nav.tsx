@@ -17,20 +17,21 @@ export function Nav() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-16 items-center justify-between gap-4 px-6 sm:px-6 lg:px-8">
         <Link href="/" className="text-xl font-bold">
           ByteBeings
         </Link>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href
             return (
               <Button
                 key={item.href}
                 variant={isActive ? "default" : "ghost"}
+                size="sm"
                 asChild
                 className={cn(
-                  "transition-colors",
+                  "transition-colors px-2 sm:px-4 text-xs sm:text-sm",
                   isActive && "bg-primary text-primary-foreground"
                 )}
               >

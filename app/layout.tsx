@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ByteBeings - Personal Website",
   description: "A blog for thoughts and a portfolio showcasing projects and skills",
+  icons: {
+    icon: "/logos/ByteBeings-favicon.png",
+    apple: "/logos/ByteBeings-favicon.png",
+  },
 };
 
 export default function RootLayout({
