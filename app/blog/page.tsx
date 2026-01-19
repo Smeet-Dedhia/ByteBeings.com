@@ -19,7 +19,7 @@ export default async function BlogPage() {
           Blog
         </h1>
         <p className="text-xl text-muted-foreground">
-          Thoughts, ideas, and insights on software development and beyond.
+        A space where I share my thoughts about everything that exists as Bytes - from Data to Software to AI.
         </p>
       </MotionSection>
 
