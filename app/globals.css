@@ -387,6 +387,7 @@ body {
   position: relative;
   display: inline-block;
   color: var(--color-foreground);
+  padding-bottom: 0.2em; /* Space for descenders (g, y, p, etc.) */
   background: linear-gradient(
     var(--shine-angle),
     var(--color-foreground) 0%,
@@ -409,7 +410,7 @@ body {
 .heading-shine::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 0.2em; /* Align with text baseline above descender padding */
   right: 0;
   width: 0%;
   height: 2px;
@@ -592,3 +593,74 @@ body {
    
    Per-element: style="--shine-duration: 2.5s" for shorter text
 */
+
+/* ============================================
+   3D Tilt Card Effect (Desktop Only)
+   ============================================ */
+
+.tilt-card-container {
+  position: relative;
+  height: 100%;
+}
+
+/* Static golden glow - stays fixed while card tilts above it */
+.tilt-card-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    rgba(255, 180, 60, 0.7) 0%,
+    rgba(255, 160, 40, 0.5) 30%,
+    rgba(218, 165, 32, 0.3) 50%,
+    transparent 70%
+  );
+  filter: blur(12px);
+}
+
+.tilt-card-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Only enable 3D effect on desktop (non-touch devices with hover capability) */
+@media (hover: hover) and (min-width: 1024px) {
+  .tilt-card-wrapper {
+    cursor: pointer;
+  }
+
+  .tilt-card-wrapper > *:first-child {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Disable on mobile/touch devices */
+@media (hover: none), (max-width: 1023px) {
+  .tilt-card-wrapper {
+    transform: none !important;
+  }
+
+  .tilt-card-glow {
+    display: none;
+  }
+}
+
+/* Brighter glow in dark mode */
+@media (prefers-color-scheme: dark) {
+  .tilt-card-glow {
+    background: radial-gradient(
+      ellipse 100% 100% at 50% 50%,
+      rgba(255, 215, 0, 0.6) 0%,
+      rgba(255, 180, 60, 0.45) 30%,
+      rgba(218, 165, 32, 0.25) 50%,
+      transparent 70%
+    );
+    filter: blur(14px);
+  }
+}
