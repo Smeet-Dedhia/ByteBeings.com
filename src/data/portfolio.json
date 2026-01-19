@@ -3,7 +3,7 @@
     {
       "title": "Statistical Analysis of University Salaries",
       "date": "2025-03",
-      "category": "Statistical Design",
+      "category": "Statistical ML",
       "description": "A detailed Statistical Analysis of salaries of employees at a US university. Used methods like 2 Sample T Tests and Proportion Tests to uncover bias in salaries of males and females. This study also analyzes possible biases in promotion periods.",
       "githubUrl": "https://github.com/Smeet-Dedhia/Statistical-Salary-Analysis",
       "designSpecUrl": "",
@@ -23,7 +23,7 @@
     {
       "title": "Customer Trends Dashboard with Graph ML",
       "date": "2023-07",
-      "category": "Machine Learning",
+      "category": "Applied ML",
       "description": "1st Runner Up at HackRx 4 Hackathon (INR 50K prize). Analyzed Amazon Product Purchases graph dataset using GraphML algorithms to find baskets of frequently bought items. Built customer trends dashboard with React and stored graph data using JanusGraph.",
       "githubUrl": "https://github.com/Smeet-Dedhia/PhoenixGraph-HackRx-Hackathon",
       "designSpecUrl": "",
@@ -33,7 +33,7 @@
     {
       "title": "Rehabify Web-App",
       "date": "2023-04",
-      "category": "Web Development",
+      "category": "Web Dev & Cloud",
       "description": "1st Place at Applab Hackathon (INR 25K prize). Built within 36 hours - a website to aid in rehabilitation from substance addiction. Deployed as a React app incorporating DAST (Digital Addiction Screen Test).",
       "githubUrl": "https://github.com/Smeet-Dedhia/Rehabify",
       "designSpecUrl": "",
@@ -83,7 +83,7 @@
     {
       "title": "MovieMatch - ML based Movie Recommendations",
       "date": "2022-07",
-      "category": "Machine Learning",
+      "category": "Applied ML",
       "description": "Built a movie recommender model and deployed it as a website. Recommendations based on cosine similarity using features like genre, director, and description keywords. Deployed with HTML-CSS-JS and MongoDB.",
       "githubUrl": "",
       "designSpecUrl": "https://drive.google.com/file/d/1s_lzf0_8VQfnTkpfzmkGlhFUXB6juTzR/view?usp=sharing&usp=embed_facebook",
@@ -103,7 +103,7 @@
     {
       "title": "Landslide Prediction Research Project",
       "date": "2022-06",
-      "category": "Statistical Design",
+      "category": "Statistical ML",
       "description": "Research project to predict landslides in the Western Ghats region using GIS data. Used GIS & Remote Sensing data to identify Landslide Causing Factors. Led a team of 3 members under faculty mentorship.",
       "githubUrl": "",
       "designSpecUrl": "",
@@ -113,7 +113,7 @@
     {
       "title": "Machine Learning Lab Projects",
       "date": "2022-05",
-      "category": "Machine Learning",
+      "category": "Applied ML",
       "description": "Collection of projects covering ML & Data Analytics topics including Clustering, Collaborative Filtering, Regression, KNN, Naive Bayes & Support Vector Machines.",
       "githubUrl": "https://github.com/Smeet-Dedhia/MachineLearning-and-DataAnalytics-Projects",
       "designSpecUrl": "",
@@ -143,11 +143,31 @@
     {
       "title": "ByteBeings.com Website",
       "date": "2026-01",
-      "category": "Web Development",
+      "category": "Web Dev & Cloud",
       "description": "",
       "githubUrl": "https://github.com/Smeet-Dedhia/ByteBeings.com",
       "designSpecUrl": "",
       "tags": ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn UI", "React", "Vercel"],
+      "featured": false
+    },
+    {
+      "title": "AWS - Scalable Data Systems",
+      "date": "2025-12",
+      "category": "Web Dev & Cloud",
+      "description": "",
+      "githubUrl": "https://github.com/Smeet-Dedhia/AWS-Scalable-Data-Systems",
+      "designSpecUrl": "",
+      "tags": ["Polars", "S3", "Athena", "Redshift", "Glue", "Spark", "Lambda"],
+      "featured": false
+    },
+    {
+      "title": "ML for Neuroscience",
+      "date": "2025-05",
+      "category": "Statistical ML",
+      "description": "",
+      "githubUrl": "https://github.com/Smeet-Dedhia/ML-for-Neuroscience",
+      "designSpecUrl": "",
+      "tags": ["Maximum Likelihood", "PCA", "Autoencoders", "Dimensionality Reduction", "Computational Neuroscience"],
       "featured": false
     }
   ],

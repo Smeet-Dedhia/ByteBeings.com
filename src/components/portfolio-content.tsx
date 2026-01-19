@@ -16,10 +16,10 @@ interface PortfolioContentProps {
 // Hardcoded categories in desired order
 const PORTFOLIO_CATEGORIES = [
   "Agentic AI & RL",
-  "Web Development",
+  "Web Dev & Cloud",
   "NLP & Deep Learning",
-  "Machine Learning",
-  "Statistical Design",
+  "Applied ML",
+  "Statistical ML",
   "Data Viz & Analytics",
 ]
 
@@ -34,13 +34,13 @@ const CATEGORY_WORK_EXP: Record<string, { name: string; anchor: string }[]> = {
     { name: "Project Dronaid", anchor: "exp-project-dronaid" },
     { name: "Turtlemint", anchor: "exp-turtlemint" },
   ],
-  "Web Development": [
+  "Web Dev & Cloud": [
     { name: "ION Group", anchor: "exp-ion-group" },
   ],
-  "Machine Learning": [
+  "Applied ML": [
     { name: "UPL Limited", anchor: "exp-upl-limited" },
   ],
-  "Statistical Design": [],
+  "Statistical ML": [],
   "Data Viz & Analytics": [],
 }
 
