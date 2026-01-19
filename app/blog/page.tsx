@@ -41,11 +41,11 @@ export default async function BlogPage() {
                 <Link href={`/blog/${post.slug}`} className="block h-full">
                   <Card className="h-full flex flex-col transition-shadow hover:shadow-xl">
                     <CardHeader className="flex-1">
-                      <CardTitle className="text-sm sm:text-base lg:text-lg transition-colors hover:text-primary line-clamp-3">
+                      <CardTitle className="text-sm sm:text-base lg:text-lg transition-colors hover:text-primary line-clamp-4 sm:line-clamp-3">
                         {post.frontmatter.title}
                       </CardTitle>
                       {post.frontmatter.summary && (
-                        <CardDescription className="text-sm line-clamp-3 mt-2">
+                        <CardDescription className="text-xs sm:text-sm line-clamp-5 sm:line-clamp-3 mt-2">
                           {post.frontmatter.summary}
                         </CardDescription>
                       )}
@@ -66,7 +66,7 @@ export default async function BlogPage() {
                       </div>
                       {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
                         <div className="flex flex-wrap gap-1">
-                          {post.frontmatter.tags.slice(0, 2).map((tag) => (
+                          {post.frontmatter.tags.map((tag) => (
                             <Badge key={tag} variant="secondary" className="text-xs px-1.5 py-0">
                               {tag}
                             </Badge>
