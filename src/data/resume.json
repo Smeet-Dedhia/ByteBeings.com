@@ -1,98 +1,176 @@
 {
-  "name": "Your Name",
-  "headline": "Software Engineer & Developer",
-  "summary": "Passionate software engineer with expertise in building modern web applications. I love creating elegant solutions to complex problems and sharing knowledge through writing and open-source contributions.",
-  "location": "San Francisco, CA",
+  "name": "Smeet Dedhia",
+  "headline": "Software Developer | ML Engineer | Data Scientist",
+  "location": "Seattle, WA, USA",
   "links": {
-    "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/yourusername",
-    "website": "https://yourwebsite.com",
-    "email": "your.email@example.com"
+    "github": "https://github.com/Smeet-Dedhia",
+    "linkedin": "https://www.linkedin.com/in/smeet-dedhia-9b430621b/",
+    "email": "smeetd1502@gmail.com",
+    "leetcode": "https://leetcode.com/u/smeetd1502/",
+    "resumePdf": "https://drive.google.com/file/d/1iK_AcetcIxnYXJdYdxvDjjf9Ydl8HVHC/view?usp=sharing"
   },
   "experience": [
     {
-      "role": "Senior Software Engineer",
-      "company": "Tech Company Inc.",
-      "location": "San Francisco, CA",
-      "startDate": "2022-01",
+      "role": "Data Science Capstone Project",
+      "company": "Microsoft",
+      "location": "Seattle, WA, USA",
+      "startDate": "Sep 2025",
       "endDate": null,
+      "logo": "/logos/microsoft_logo.jpg",
       "description": [
-        "Led development of customer-facing web applications using Next.js and TypeScript",
-        "Architected and implemented scalable backend services handling millions of requests",
-        "Mentored junior developers and established coding best practices",
-        "Collaborated with cross-functional teams to deliver features on time"
+        "Agentic AI System to optimize SQL queries to improve Data Engineers' productivity",
+        "Reinforcement Learning based LLM fine tuning using BIRD - CRITIC dataset"
       ],
-      "technologies": ["Next.js", "TypeScript", "React", "Node.js", "PostgreSQL"]
+      "technologies": ["GPT-OSS", "T-SQL Server", "LangChain", "DsPy", "Azure"]
     },
     {
-      "role": "Software Engineer",
-      "company": "Startup Co.",
-      "location": "Remote",
-      "startDate": "2020-06",
-      "endDate": "2021-12",
+      "role": "ML Engineer Intern",
+      "company": "Intuitive",
+      "location": "Sunnyvale, CA, USA",
+      "startDate": "Jun 2025",
+      "endDate": null,
+      "logo": "/logos/intuitivesurgical_logo.jpg",
       "description": [
-        "Built and maintained full-stack web applications",
-        "Implemented CI/CD pipelines reducing deployment time by 50%",
-        "Optimized database queries improving application performance by 40%"
+        "Proposed, Designed & Developed a multi-agent AI Copilot MVP - chatbot to help users operate complex legacy apps, with responses grounded on internal docs & training videos with RAG",
+        "AI Skills - Screen Context Aware, Knowledge from Native APIs & Workflow Guidance",
+        "Integrated into Appian, Service Now & App UI to automate up to 65% of support tickets"
       ],
-      "technologies": ["React", "Python", "Django", "AWS", "Docker"]
+      "technologies": ["GPT-OSS", "LangChain", "LangGraph", "DsPy", "ChromaDB", "MCP", "Docker", "Next.js"]
+    },
+    {
+      "role": "Software Developer (GenAI) Intern",
+      "company": "ATX Labs",
+      "location": "Pune, India",
+      "startDate": "Jun 2024",
+      "endDate": "Aug 2024",
+      "logo": "/logos/atxlabs_logo.jpg",
+      "description": [
+        "Configured Computer-Use AI Agents to perform stepwise Automated Web GUI Testing",
+        "Fine-tuned Llama3 along with Context Engineering to optimize speed & costs"
+      ],
+      "technologies": ["Llama3", "Computer-Use AI", "Context Engineering"]
+    },
+    {
+      "role": "Software Developer",
+      "company": "ION Group",
+      "location": "Pune, India",
+      "startDate": "Jan 2024",
+      "endDate": "May 2024",
+      "logo": "/logos/iongroup_logo.jpg",
+      "description": [
+        "As part of the Core Architecture Team, contributed to Web SDK for FinTech Platforms",
+        "Developed features for frontend components like calendar widgets & smart tables, using concepts like state management, custom events, dependency injection & ng directives",
+        "Migrated legacy components from Angular.js to modern Web Components in Angular 17",
+        "Practical exposure to enterprise CI/CD pipelines, DevOps & test-driven development"
+      ],
+      "technologies": ["Angular", "TypeScript", "Node.js", "PySelenium", "Jenkins"]
+    },
+    {
+      "role": "Data Scientist Intern",
+      "company": "UPL Limited",
+      "location": "Bengaluru, India",
+      "startDate": "Jun 2023",
+      "endDate": "Aug 2023",
+      "logo": "/logos/upl_ltd_logo.jpg",
+      "description": [
+        "Worked on the predictive Customer Churn model which improved retention for 500+ customers",
+        "Automated data preprocessing & feature engineering pipelines using PySpark and deployed workflows on Azure Databricks, reducing manual effort by 80%",
+        "Integrated MLflow for MLOps with continuous tracking + training & version control",
+        "Saved USD 1500/year for UPL by replacing paid APIs with open source alternatives"
+      ],
+      "technologies": ["Databricks", "MLflow", "Scikit-learn", "pandas", "shap", "PySpark"]
+    },
+    {
+      "role": "Software & AI Head",
+      "company": "Project Dronaid",
+      "location": "Manipal, India",
+      "startDate": "Jul 2022",
+      "endDate": "Jul 2023",
+      "logo": "/logos/1689095453140.jpg",
+      "description": [
+        "As a board member, involved with Funding, Planning and Managing 40+ team members",
+        "As AI Head, guided the AI team of 10 to deploy Computer Vision applications for drones"
+      ],
+      "technologies": ["Computer Vision", "Python", "Deep Learning", "Drones"]
     }
   ],
   "education": [
     {
-      "degree": "Bachelor of Science in Computer Science",
-      "institution": "University Name",
-      "location": "City, State",
-      "startDate": "2016-09",
-      "endDate": "2020-05",
+      "degree": "Master of Science, Data Science",
+      "institution": "University of Washington",
+      "location": "Seattle, WA, USA",
+      "startDate": "Sep 2024",
+      "endDate": "Mar 2026",
+      "gpa": "3.9 GPA",
+      "logo": "/logos/university_of_washington_logo.jpg"
+    },
+    {
+      "degree": "B.Tech Data Science & Engineering",
+      "institution": "Manipal Institute of Technology",
+      "location": "Manipal, India",
+      "startDate": "2020",
+      "endDate": "2024",
       "description": [
-        "Relevant coursework: Data Structures, Algorithms, Software Engineering",
-        "Dean's List: Fall 2018, Spring 2019"
+        "Minors in Finance & Portfolio Management"
       ],
-      "gpa": "3.8/4.0"
+      "gpa": "3.9 GPA",
+      "logo": "/logos/manipal_institute_of_technology_logo.jpg"
     }
   ],
   "projects": [
     {
-      "name": "Project Name",
-      "description": "A brief description of what this project does and why it's interesting.",
-      "url": "https://project-demo.com",
-      "githubUrl": "https://github.com/yourusername/project",
-      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "name": "PheonixGraph",
+      "description": "Award-winning project at HackRx by Bajaj-Finserv, securing 1st Runner Up at the national level competition.",
+      "technologies": ["Full Stack", "FinTech"],
       "highlights": [
-        "Built with modern web technologies",
-        "Deployed on Vercel with CI/CD",
-        "Open source and available on GitHub"
+        "National level hackathon recognition",
+        "Won INR 50K prize"
       ]
     },
     {
-      "name": "Another Project",
-      "description": "Another interesting project description.",
-      "githubUrl": "https://github.com/yourusername/another-project",
-      "technologies": ["React", "Node.js", "MongoDB"],
+      "name": "Rehabify",
+      "description": "Healthcare-focused application that won 1st Place at both eSamudaay Hackathon and AppLab Hackathon.",
+      "technologies": ["Healthcare Tech", "Mobile App"],
       "highlights": [
-        "Real-time features using WebSockets",
-        "Responsive design for all devices"
+        "Double hackathon winner",
+        "Won INR 25K prize"
       ]
     }
   ],
   "skills": [
     {
       "category": "Languages",
-      "skills": ["TypeScript", "JavaScript", "Python", "Java", "Go"]
+      "skills": ["Python", "C++", "JavaScript", "SQL", "Java", "PySpark", "R", "CUDA"]
     },
     {
-      "category": "Frameworks & Libraries",
-      "skills": ["Next.js", "React", "Node.js", "Express", "Django"]
+      "category": "Frameworks & Cloud",
+      "skills": ["Angular", "Docker", "AWS Redshift", "AWS Athena", "Azure Databricks", "Spring"]
     },
     {
-      "category": "Tools & Technologies",
-      "skills": ["Git", "Docker", "AWS", "PostgreSQL", "MongoDB", "Redis"]
+      "category": "AI & ML",
+      "skills": ["PyTorch", "LangChain", "LlamaIndex", "MCP-A2A", "Huggingface", "Scikit-learn"]
+    },
+    {
+      "category": "Tools & Systems",
+      "skills": ["JAX", "DsPy", "MLOps", "DevOps", "Microservices", "Distributed Systems"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Achiever's Scholarship",
+      "description": "Recipient with 20% tuition fee waiver during undergraduate studies"
+    },
+    {
+      "title": "1st Runner Up - HackRx by Bajaj-Finserv",
+      "description": "National level hackathon, winning INR 50K with PheonixGraph"
+    },
+    {
+      "title": "1st Place - eSamudaay & AppLab Hackathon",
+      "description": "Won INR 25K with Rehabify"
     }
   ],
   "meta": {
-    "updatedAt": "2024-01-01",
+    "updatedAt": "2026-01-18",
     "version": "1.0.0"
   }
 }
-

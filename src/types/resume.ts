@@ -11,6 +11,7 @@ export interface ExperienceItem {
   endDate: string | null // null for current position
   description: string[]
   technologies?: string[]
+  logo?: string // path to company logo
 }
 
 export interface EducationItem {
@@ -21,6 +22,7 @@ export interface EducationItem {
   endDate: string | null
   description?: string[]
   gpa?: string
+  logo?: string // path to institution logo
 }
 
 export interface ProjectItem {
@@ -35,6 +37,12 @@ export interface ProjectItem {
 export interface SkillGroup {
   category: string
   skills: string[]
+}
+
+export interface AwardItem {
+  title: string
+  description: string
+  year?: string
 }
 
 export interface Resume {
@@ -53,6 +61,7 @@ export interface Resume {
   education: EducationItem[]
   projects: ProjectItem[]
   skills: SkillGroup[]
+  awards?: AwardItem[]
   meta?: {
     updatedAt?: string
     version?: string
