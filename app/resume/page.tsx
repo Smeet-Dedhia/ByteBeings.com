@@ -107,13 +107,18 @@ export default async function ResumePage() {
                   Resume - PDF
                 </Link>
               )}
-              <Link
-                href="/portfolio"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium transition-colors hover:bg-primary/90"
-              >
-                <Globe className="h-4 w-4" />
-                Projects Portfolio →
-              </Link>
+              <div className="relative">
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium transition-colors hover:bg-primary/90"
+                >
+                  <Globe className="h-4 w-4" />
+                  Projects Portfolio →
+                </Link>
+                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-muted-foreground font-scribble text-lg">
+                  Domain-wise Projects showcase
+                </span>
+              </div>
             </div>
           </div>
 
@@ -194,7 +199,7 @@ export default async function ResumePage() {
           {resume.experience.map((exp, index) => (
             <FadeIn key={index} delay={index * 0.1}>
               <TiltCard>
-                <Card className="transition-shadow hover:shadow-lg">
+                <Card id={`exp-${exp.company.toLowerCase().replace(/\s+/g, '-')}`} className="transition-shadow hover:shadow-lg scroll-mt-32">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-6">
                       {/* Left Column - Logo & Info */}

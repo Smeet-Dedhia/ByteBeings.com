@@ -90,15 +90,32 @@ export function PortfolioSelector({
     }
 
     const updateItems = () => {
+      const totalItems = items.length
+      
       itemElements.forEach((element, index) => {
-        const relativePosition = index - currentIndex
         element.classList.remove("center", "top", "bottom", "hidden")
+
+        // Calculate circular relative position
+        let relativePosition = index - currentIndex
+        
+        // Handle circular wrapping
+        if (relativePosition > totalItems / 2) {
+          relativePosition -= totalItems
+        } else if (relativePosition < -totalItems / 2) {
+          relativePosition += totalItems
+        }
+        
+        // Special case for exact halfway (when even number of items)
+        if (totalItems % 2 === 0 && Math.abs(relativePosition) === totalItems / 2) {
+          // Prefer showing as bottom for consistency
+          relativePosition = totalItems / 2
+        }
 
         if (relativePosition === 0) {
           element.classList.add("center")
-        } else if (relativePosition === -1) {
+        } else if (relativePosition === -1 || (currentIndex === 0 && index === totalItems - 1)) {
           element.classList.add("top")
-        } else if (relativePosition === 1) {
+        } else if (relativePosition === 1 || (currentIndex === totalItems - 1 && index === 0)) {
           element.classList.add("bottom")
         } else {
           element.classList.add("hidden")
@@ -138,6 +155,14 @@ export function PortfolioSelector({
 
     const handleClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null
+      if (target?.closest(".selector-caret--up")) {
+        navigate(-1)
+        return
+      }
+      if (target?.closest(".selector-caret--down")) {
+        navigate(1)
+        return
+      }
       if (target?.closest(".selector-item.top")) {
         navigate(-1)
         return
@@ -229,9 +254,11 @@ export function PortfolioSelector({
         </button>
       </span>
       <span ref={containerRef} className="portfolio-selector">
+        <span className="selector-caret selector-caret--up" aria-hidden="true">&#8963;</span>
         <span className="selector-viewport">
           <span className="selector-track" />
         </span>
+        <span className="selector-caret selector-caret--down" aria-hidden="true">&#8964;</span>
       </span>
       <span className="selector-mobile-controls" aria-hidden="true">
         <button type="button" className="selector-arrow selector-arrow--right">

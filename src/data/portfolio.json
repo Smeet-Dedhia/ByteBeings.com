@@ -1,0 +1,158 @@
+{
+  "projects": [
+    {
+      "title": "Statistical Analysis of University Salaries",
+      "date": "2025-03",
+      "category": "Statistical Design",
+      "description": "A detailed Statistical Analysis of salaries of employees at a US university. Used methods like 2 Sample T Tests and Proportion Tests to uncover bias in salaries of males and females. This study also analyzes possible biases in promotion periods.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/Statistical-Salary-Analysis",
+      "designSpecUrl": "",
+      "tags": ["R", "Statistical Testing", "T-Tests", "Proportion Tests", "Data Analysis"],
+      "featured": true
+    },
+    {
+      "title": "Content Wars! OTT Platforms Analysis Dashboard",
+      "date": "2024-12",
+      "category": "Data Viz & Analytics",
+      "description": "A one-stop Tableau dashboard to compare Netflix, Prime Video, HBO & Disney+. Compare Top Content across platforms by user popularity and awards like Oscars/Emmy's. Features Analyst Mode for worldwide presence and revenue analysis.",
+      "githubUrl": "https://public.tableau.com/app/profile/smeet.dedhia/viz/ContentWars-OTTPlatformsAnalysisDashboard/Home",
+      "designSpecUrl": "",
+      "tags": ["Tableau", "Data Visualization", "Dashboard Design", "OTT Analytics", "Business Intelligence"],
+      "featured": true
+    },
+    {
+      "title": "Customer Trends Dashboard with Graph ML",
+      "date": "2023-07",
+      "category": "Machine Learning",
+      "description": "1st Runner Up at HackRx 4 Hackathon (INR 50K prize). Analyzed Amazon Product Purchases graph dataset using GraphML algorithms to find baskets of frequently bought items. Built customer trends dashboard with React and stored graph data using JanusGraph.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/PhoenixGraph-HackRx-Hackathon",
+      "designSpecUrl": "",
+      "tags": ["GraphML", "NetworkX", "React", "JanusGraph", "Data Analytics"],
+      "featured": true
+    },
+    {
+      "title": "Rehabify Web-App",
+      "date": "2023-04",
+      "category": "Web Development",
+      "description": "1st Place at Applab Hackathon (INR 25K prize). Built within 36 hours - a website to aid in rehabilitation from substance addiction. Deployed as a React app incorporating DAST (Digital Addiction Screen Test).",
+      "githubUrl": "https://github.com/Smeet-Dedhia/Rehabify",
+      "designSpecUrl": "",
+      "tags": ["React.js", "MongoDB", "Node.js", "Healthcare Tech", "Hackathon Winner"],
+      "featured": true
+    },
+    {
+      "title": "Reinforcement Learning & AI Lab Projects",
+      "date": "2023-03",
+      "category": "Agentic AI & RL",
+      "description": "Collection of projects on AI topics including Reinforcement Learning, Problem Solving, Multi Arm Bandits, Markov Decision Process, Monte Carlo Methods, SARSA and Q Learning.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/Artificial-Intelligence-Lab-Projects",
+      "designSpecUrl": "",
+      "tags": ["Reinforcement Learning", "MDP", "Q-Learning", "SARSA", "Python"],
+      "featured": true
+    },
+    {
+      "title": "Object Detection (CV) for DronAid UAVs",
+      "date": "2022-12",
+      "category": "NLP & Deep Learning",
+      "description": "Project for AI Team of Dronaid.in (2022-23). Trained Object Detection models including YOLO and ResNet for deployment on Drones (UAVs) for search and rescue operations.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/ObjectDetection-for-DronAid-UAVs",
+      "designSpecUrl": "",
+      "tags": ["YOLO", "ResNet", "Computer Vision", "Object Detection", "UAV/Drones"],
+      "featured": true
+    },
+    {
+      "title": "Deep Learning Lab Projects",
+      "date": "2022-10",
+      "category": "NLP & Deep Learning",
+      "description": "Projects covering Deep Learning topics including Convolutional Neural Networks, Recurrent Neural Networks, LSTMs, GRU, Wide & Deep Networks and Deep & Cross Networks.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/DeepLearning-Lab-Projects",
+      "designSpecUrl": "",
+      "tags": ["CNN", "RNN", "LSTM", "GRU", "TensorFlow"],
+      "featured": false
+    },
+    {
+      "title": "API Analytics Dashboard",
+      "date": "2022-07",
+      "category": "Data Viz & Analytics",
+      "description": "1st Place at eSamudaay Hackathon (INR 25K prize). Developed a Business Dashboard to analyze Customer Purchasing Behavior and API analytics within 48 hours.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/eSamudaay-Hackathon",
+      "designSpecUrl": "",
+      "tags": ["Recommender Systems", "JanusGraph", "Dashboard", "Business Analytics", "Hackathon Winner"],
+      "featured": true
+    },
+    {
+      "title": "MovieMatch - ML based Movie Recommendations",
+      "date": "2022-07",
+      "category": "Machine Learning",
+      "description": "Built a movie recommender model and deployed it as a website. Recommendations based on cosine similarity using features like genre, director, and description keywords. Deployed with HTML-CSS-JS and MongoDB.",
+      "githubUrl": "",
+      "designSpecUrl": "https://drive.google.com/file/d/1s_lzf0_8VQfnTkpfzmkGlhFUXB6juTzR/view?usp=sharing&usp=embed_facebook",
+      "tags": ["Machine Learning", "Cosine Similarity", "Recommender Systems", "MongoDB", "Web Development"],
+      "featured": false
+    },
+    {
+      "title": "IPL Scores & Analytics Database",
+      "date": "2022-06",
+      "category": "Data Viz & Analytics",
+      "description": "A comprehensive SQL database project for IPL cricket scores and analytics. Designed relational schema and wrote complex queries for sports analytics insights.",
+      "githubUrl": "",
+      "designSpecUrl": "https://drive.google.com/file/d/1MWOgrzEZfCSGYT4-0AumhqEQxhIrEAvc/view?usp=sharing&usp=embed_facebook",
+      "tags": ["SQL", "Database Design", "Sports Analytics", "Data Modeling", "Cricket"],
+      "featured": true
+    },
+    {
+      "title": "Landslide Prediction Research Project",
+      "date": "2022-06",
+      "category": "Statistical Design",
+      "description": "Research project to predict landslides in the Western Ghats region using GIS data. Used GIS & Remote Sensing data to identify Landslide Causing Factors. Led a team of 3 members under faculty mentorship.",
+      "githubUrl": "",
+      "designSpecUrl": "",
+      "tags": ["GIS", "Remote Sensing", "Machine Learning", "Research", "Team Leadership"],
+      "featured": true
+    },
+    {
+      "title": "Machine Learning Lab Projects",
+      "date": "2022-05",
+      "category": "Machine Learning",
+      "description": "Collection of projects covering ML & Data Analytics topics including Clustering, Collaborative Filtering, Regression, KNN, Naive Bayes & Support Vector Machines.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/MachineLearning-and-DataAnalytics-Projects",
+      "designSpecUrl": "",
+      "tags": ["Clustering", "SVM", "KNN", "Naive Bayes", "Scikit-learn"],
+      "featured": false
+    },
+    {
+      "title": "Vision Language Action (LLM) models for Robotics",
+      "date": "2025-05",
+      "category": "Agentic AI & RL",
+      "description": "",
+      "githubUrl": "",
+      "designSpecUrl": "https://drive.google.com/file/d/1tPnxF0VZlr9FQC7ejwzl5lPPlgH40ffL/view?usp=sharing",
+      "tags": ["LLM", "Robotics", "Vision Language Action", "RL", "LeRobot-So-100"],
+      "featured": false
+    },
+    {
+      "title": "Sequel2SQL - Agentic AI System to optimize SQL queries",
+      "date": "2026-03",
+      "category": "Agentic AI & RL",
+      "description": "",
+      "githubUrl": "https://github.com/SVijayB/sequel2sql",
+      "designSpecUrl": "https://drive.google.com/file/d/124XCAYQktlLTizzSaXZwUQz1DfPhbw-n/view?usp=sharing",
+      "tags": ["BIRD-CRITIC", "SQL", "Agentic AI", "Reinforcement Learning", "Azure", "GPT-OSS"],
+      "featured": false
+    },
+    {
+      "title": "ByteBeings.com Website",
+      "date": "2026-01",
+      "category": "Web Development",
+      "description": "",
+      "githubUrl": "https://github.com/Smeet-Dedhia/ByteBeings.com",
+      "designSpecUrl": "",
+      "tags": ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn UI", "React", "Vercel"],
+      "featured": false
+    }
+  ],
+  "meta": {
+    "updatedAt": "2025-01-18",
+    "version": "1.0"
+  }
+}

@@ -93,6 +93,19 @@
         "As AI Head, guided the AI team of 10 to deploy Computer Vision applications for drones"
       ],
       "technologies": ["Computer Vision", "Python", "Deep Learning", "Drones"]
+    },
+    {
+      "role": "ML (Computer Vision) Intern",
+      "company": "Turtlemint",
+      "location": "Remote, India",
+      "startDate": "Dec 2022",
+      "endDate": "Jan 2023",
+      "logo": "/logos/turtlemint_logo.jpg",
+      "description": [
+        "Developed a Computer Vision model to identify damage of Automobiles & Crops for insurance purposes",
+        "Delivered a complete POC, right from Research to Implementation to Business Demo"
+      ],
+      "technologies": ["TensorFlow", "PyTorch", "OpenCV", "Few Shot Learning"]
     }
   ],
   "education": [

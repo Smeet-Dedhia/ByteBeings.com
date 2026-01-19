@@ -25,6 +25,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Handwritten/Scribble font class */
+.font-scribble {
+  font-family: var(--font-caveat), 'Caveat', cursive;
+}
+
 @media (prefers-color-scheme: dark) {
   @theme {
     --color-background: #0a0a0a;
@@ -271,6 +276,28 @@ body {
   pointer-events: none;
 }
 
+.selector-caret {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.5em;
+  font-weight: 700;
+  opacity: 0.25;
+  color: currentColor;
+  cursor: pointer;
+  z-index: 3;
+  line-height: 1;
+  user-select: none;
+}
+
+.selector-caret--up {
+  top: 0.1em;
+}
+
+.selector-caret--down {
+  bottom: 0.1em;
+}
+
 .portfolio-line {
   display: inline-flex;
   align-items: center;
@@ -333,6 +360,10 @@ body {
 
   .selector-item {
     font-size: 1.15em;
+  }
+
+  .selector-caret {
+    display: none;
   }
 }
 
