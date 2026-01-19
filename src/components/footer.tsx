@@ -18,6 +18,12 @@ export function Footer() {
               Blog
             </Link>
             <Link
+              href="/portfolio"
+              className="transition-colors hover:text-foreground"
+            >
+              Portfolio
+            </Link>
+            <Link
               href="/resume"
               className="transition-colors hover:text-foreground"
             >

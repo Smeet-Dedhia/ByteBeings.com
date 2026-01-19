@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Selector - Standalone Demo</title>
+  <link rel="stylesheet" href="portfolio-selector.css">
+</head>
+<body>
+  <div class="demo-container">
+    <p class="demo-text">
+      <span class="portfolio-line">
+        <span class="portfolio-label">Check-out my projects in ...</span>
+        <span class="selector-wrapper">
+          <span class="selector-mobile-controls" aria-hidden="true">
+            <button type="button" class="selector-arrow selector-arrow--left">&lt;</button>
+          </span>
+          <span id="portfolio-selector" class="portfolio-selector">
+            <span class="selector-viewport">
+              <span class="selector-track" id="selector-track">
+                <!-- Items will be dynamically inserted here -->
+              </span>
+            </span>
+          </span>
+          <span class="selector-mobile-controls" aria-hidden="true">
+            <button type="button" class="selector-arrow selector-arrow--right">&gt;</button>
+          </span>
+        </span>
+      </span>
+    </p>
+  </div>
+
+  <script src="portfolio-selector.js"></script>
+</body>
+</html>

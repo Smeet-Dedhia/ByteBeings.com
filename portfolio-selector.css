@@ -1,173 +1,20 @@
-@import "tailwindcss";
+/**
+ * Portfolio Selector - Vertical Scroll Barrel Animation
+ * 
+ * Creates a barrel/wheel effect using scale, opacity, and translate transforms.
+ * The illusion of depth comes from:
+ * - Scale: Center item is larger (1.15x), edges are smaller (0.85x)
+ * - Opacity: Center is fully opaque, edges fade to 0.4
+ * - Translate: Items move vertically to simulate rotation
+ * - Transition: Smooth easing creates the "rolling" feel
+ */
 
-@theme {
-  --color-background: #ffffff;
-  --color-foreground: #0a0a0a;
-  --color-card: #ffffff;
-  --color-card-foreground: #0a0a0a;
-  --color-popover: #ffffff;
-  --color-popover-foreground: #0a0a0a;
-  --color-primary: #171717;
-  --color-primary-foreground: #fafafa;
-  --color-secondary: #f5f5f5;
-  --color-secondary-foreground: #171717;
-  --color-muted: #f5f5f5;
-  --color-muted-foreground: #737373;
-  --color-accent: #f5f5f5;
-  --color-accent-foreground: #171717;
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #fafafa;
-  --color-border: #e5e5e5;
-  --color-input: #e5e5e5;
-  --color-ring: #0a0a0a;
-  --radius: 0.5rem;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  @theme {
-    --color-background: #0a0a0a;
-    --color-foreground: #fafafa;
-    --color-card: #0a0a0a;
-    --color-card-foreground: #fafafa;
-    --color-popover: #0a0a0a;
-    --color-popover-foreground: #fafafa;
-    --color-primary: #fafafa;
-    --color-primary-foreground: #171717;
-    --color-secondary: #262626;
-    --color-secondary-foreground: #fafafa;
-    --color-muted: #262626;
-    --color-muted-foreground: #a3a3a3;
-    --color-accent: #262626;
-    --color-accent-foreground: #fafafa;
-    --color-destructive: #7f1d1d;
-    --color-destructive-foreground: #fafafa;
-    --color-border: #262626;
-    --color-input: #262626;
-    --color-ring: #d4d4d4;
-  }
-}
-
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-}
-
-/* Prose styles for markdown content */
-.prose {
-  color: var(--color-foreground);
-}
-
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4 {
-  font-weight: 700;
-  color: var(--color-foreground);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.prose h1 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.prose h2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.prose h3 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.prose p {
-  margin-bottom: 1rem;
-  line-height: 1.75;
-}
-
-.prose ul,
-.prose ol {
-  margin-bottom: 1rem;
-  margin-left: 1.5rem;
-}
-
-.prose li {
-  margin-bottom: 0.5rem;
-}
-
-.prose code {
-  background-color: var(--color-muted);
-  padding: 0.125rem 0.375rem;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
-  font-family: var(--font-mono), monospace;
-}
-
-.prose pre {
-  background-color: var(--color-muted);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  margin-bottom: 1rem;
-}
-
-.prose pre code {
-  background-color: transparent;
-  padding: 0;
-}
-
-.prose a {
-  color: var(--color-primary);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.prose a:hover {
-  opacity: 0.8;
-}
-
-.prose blockquote {
-  border-left: 4px solid var(--color-muted-foreground);
-  border-opacity: 0.2;
-  padding-left: 1rem;
-  font-style: italic;
-  margin: 1rem 0;
-}
-
-.prose img {
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-}
-
-.prose table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-}
-
-.prose th,
-.prose td {
-  border: 1px solid var(--color-border);
-  padding: 0.5rem;
-}
-
-.prose th {
-  background-color: var(--color-muted);
-  font-weight: 600;
-}
-
-/* Portfolio Selector Styles */
 .selector-wrapper {
   display: inline-flex;
   align-items: center;
   position: relative;
   vertical-align: middle;
-  margin: 0 0.5em;
+  margin: 0 0.8em;
   line-height: 1;
   max-width: 100%;
   min-width: 0;
@@ -206,6 +53,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* cubic-bezier provides smooth easing - tweak for different feel */
 }
 
 .selector-item {
@@ -224,6 +72,14 @@ body {
   font-size: 1.05em;
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
               opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* 
+   * Animation intensity controls:
+   * - Scale range: Adjust .selector-item.center scale (currently 1.2)
+   * - Opacity range: Adjust .selector-item.top/bottom opacity (currently 0.4)
+   * - Blur: Adjust filter blur (currently 0.5px)
+   * - Duration: Change transition duration (currently 350ms)
+ * - Spacing: Adjust translateY values (currently ±1.1em)
+   */
 }
 
 .selector-measure {
@@ -235,11 +91,11 @@ body {
   pointer-events: none;
 }
 
+/* Center item - focused state */
 .selector-item.center {
   transform: translateY(0) scale(1.2);
   opacity: 1;
   z-index: 2;
-  color: rgb(59, 130, 246);
   font-size: var(--selector-center-size, 1em);
 }
 
@@ -249,27 +105,46 @@ body {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .selector-item.center {
-    color: rgb(96, 165, 250);
-  }
-}
-
+/* Top item - above center, visible */
 .selector-item.top {
   transform: translateY(-1.1em) scale(0.5);
   opacity: 0.4;
   z-index: 1;
 }
 
+/* Bottom item - below center, visible */
 .selector-item.bottom {
   transform: translateY(1.1em) scale(0.5);
   opacity: 0.4;
   z-index: 1;
 }
 
+/* Hidden items (outside viewport) */
 .selector-item.hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+/* Optional: Add accent color to center item */
+.selector-item.center {
+  color: rgb(59, 130, 246); /* Blue accent - customize as needed */
+}
+
+/* Demo container styles */
+.demo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 3rem; /* Larger font for demo */
+  line-height: 1.5;
+}
+
+.demo-text {
+  text-align: center;
+  font-weight: 500;
 }
 
 .portfolio-line {
@@ -283,16 +158,6 @@ body {
 
 .portfolio-label {
   font-size: inherit;
-}
-
-.portfolio-title {
-  font-size: clamp(1.25rem, 2.8vw, 2.5rem);
-}
-
-@media (max-width: 768px) {
-  .portfolio-title {
-    font-size: 1.7rem;
-  }
 }
 
 @media (max-width: 768px) {
