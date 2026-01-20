@@ -6,6 +6,7 @@ export interface PostFrontmatter {
   summary?: string
   published?: boolean
   author?: string
+  wip?: boolean
 }
 
 export interface Post {

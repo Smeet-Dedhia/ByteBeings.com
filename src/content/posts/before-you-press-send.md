@@ -5,6 +5,7 @@ tags: ["AI", "Privacy", "UX", "Data"]
 summary: "The most dangerous moment in AI interaction is the Send button. We need a layer that gives users control before data leaves their hands."
 published: true
 author: "Smeet Dedhia"
+wip: true
 ---
 
 The most dangerous moment in AI interaction is not training.

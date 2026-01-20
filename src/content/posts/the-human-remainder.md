@@ -5,6 +5,7 @@ tags: ["AI", "Humanity", "Ethics", "Work"]
 summary: "This is not a list of what AI cannot do, but what humans should remain responsible for — for my own sanity."
 published: true
 author: "Smeet Dedhia"
+wip: true
 ---
 
 This is not a list of things AI can never do.

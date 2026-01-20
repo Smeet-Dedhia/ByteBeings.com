@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { MotionSection } from "@/components/motion"
 import { PostMarkdown } from "@/components/post-markdown"
+import { WipBanner } from "@/components/wip-banner"
 import { Calendar, ArrowLeft } from "lucide-react"
 
 export async function generateStaticParams() {
@@ -73,6 +74,9 @@ export default async function PostPage({
               </div>
             )}
           </header>
+
+          {/* WIP Banner - shows if post has wip: true in frontmatter */}
+          {post.frontmatter.wip && <WipBanner />}
 
           <PostMarkdown content={post.content} />
         </article>

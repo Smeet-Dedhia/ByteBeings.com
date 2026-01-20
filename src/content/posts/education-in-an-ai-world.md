@@ -5,6 +5,7 @@ tags: ["AI", "Education", "Learning", "Future"]
 summary: "When knowledge is abundant, education must focus less on memorization and more on judgment, synthesis, and adaptability."
 published: true
 author: "Smeet Dedhia"
+wip: true
 ---
 
 Education was built for a world where knowledge was scarce.

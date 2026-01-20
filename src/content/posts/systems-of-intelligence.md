@@ -5,6 +5,7 @@ tags: ["AI", "Software", "Systems", "Future"]
 summary: "AI is not just another software upgrade. It changes how systems are built, how interfaces emerge, and how humans interact with machines."
 published: true
 author: "Smeet Dedhia"
+wip: true
 ---
 
 For decades, software followed a simple model.
