@@ -11,12 +11,14 @@ import { useEffect, useRef } from "react"
 
 interface PortfolioSelectorProps {
   items: string[]
-  onSelect?: (item: string, index: number) => void
+  initialIndex?: number
+  onSelect?: (item: string, index: number, isInitial: boolean) => void
   className?: string
 }
 
 export function PortfolioSelector({ 
   items, 
+  initialIndex = 0,
   onSelect,
   className = "" 
 }: PortfolioSelectorProps) {
@@ -41,7 +43,9 @@ export function PortfolioSelector({
       return element
     })
 
-    let currentIndex = 0
+    // Start at the initial index (from URL param or default 0)
+    let currentIndex = Math.max(0, Math.min(initialIndex, items.length - 1))
+    let isFirstUpdate = true
     let isScrolling = false
     let scrollTimeout: NodeJS.Timeout | null = null
     let lastWheelAt = 0
@@ -128,8 +132,9 @@ export function PortfolioSelector({
       fitCenterItem()
 
       if (onSelect) {
-        onSelect(items[currentIndex], currentIndex)
+        onSelect(items[currentIndex], currentIndex, isFirstUpdate)
       }
+      isFirstUpdate = false
     }
 
     const navigate = (direction: number) => {
@@ -246,7 +251,7 @@ export function PortfolioSelector({
       if (scrollTimeout) clearTimeout(scrollTimeout)
       resizeObserver.disconnect()
     }
-  }, [items, onSelect])
+  }, [items, initialIndex, onSelect])
 
   return (
     <span className={`selector-wrapper ${className}`}>

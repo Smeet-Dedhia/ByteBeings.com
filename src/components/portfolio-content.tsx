@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
+import { useSearchParams, useRouter, usePathname } from "next/navigation"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
@@ -22,6 +23,21 @@ const PORTFOLIO_CATEGORIES = [
   "Statistical ML",
   "Data Viz & Analytics",
 ]
+
+// Create URL-friendly slugs for categories
+function categoryToSlug(category: string): string {
+  return category
+    .toLowerCase()
+    .replace(/&/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+}
+
+// Create reverse mapping from slug to category
+const SLUG_TO_CATEGORY: Record<string, string> = Object.fromEntries(
+  PORTFOLIO_CATEGORIES.map((cat) => [categoryToSlug(cat), cat])
+)
 
 // Mapping of categories to related work experience
 const CATEGORY_WORK_EXP: Record<string, { name: string; anchor: string }[]> = {
@@ -117,8 +133,53 @@ function ProjectCard({ project }: { project: PortfolioProject }) {
 }
 
 export function PortfolioContent({ projects }: PortfolioContentProps) {
-  const [selectedCategory, setSelectedCategory] = useState(PORTFOLIO_CATEGORIES[0])
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  // Get category from URL or default to first
+  const getCategoryFromUrl = useCallback(() => {
+    const categorySlug = searchParams.get("category")
+    if (categorySlug && SLUG_TO_CATEGORY[categorySlug]) {
+      return SLUG_TO_CATEGORY[categorySlug]
+    }
+    return PORTFOLIO_CATEGORIES[0]
+  }, [searchParams])
+
+  // Use ref to capture initial index only once (prevents re-render loops)
+  const initialIndexRef = useRef<number | null>(null)
+  if (initialIndexRef.current === null) {
+    const initialCategory = getCategoryFromUrl()
+    initialIndexRef.current = PORTFOLIO_CATEGORIES.indexOf(initialCategory)
+  }
+  
+  const [selectedCategory, setSelectedCategory] = useState(getCategoryFromUrl)
   const [filteredProjects, setFilteredProjects] = useState<PortfolioProject[]>([])
+
+  // Store latest values in refs to avoid recreating the callback
+  const searchParamsRef = useRef(searchParams)
+  const pathnameRef = useRef(pathname)
+  const routerRef = useRef(router)
+  
+  useEffect(() => {
+    searchParamsRef.current = searchParams
+    pathnameRef.current = pathname
+    routerRef.current = router
+  }, [searchParams, pathname, router])
+
+  // Sync state with URL changes (e.g., browser back/forward)
+  // Also redirect to add category param if missing
+  useEffect(() => {
+    const categoryFromUrl = getCategoryFromUrl()
+    setSelectedCategory(categoryFromUrl)
+    
+    // If no category in URL, redirect to include the default
+    const categorySlug = searchParams.get("category")
+    if (!categorySlug) {
+      const defaultSlug = categoryToSlug(PORTFOLIO_CATEGORIES[0])
+      routerRef.current.replace(`${pathnameRef.current}?category=${defaultSlug}`, { scroll: false })
+    }
+  }, [getCategoryFromUrl, searchParams])
 
   useEffect(() => {
     if (selectedCategory) {
@@ -133,9 +194,21 @@ export function PortfolioContent({ projects }: PortfolioContentProps) {
     }
   }, [selectedCategory, projects])
 
-  const handleCategorySelect = useCallback((category: string) => {
+  // Stable callback that doesn't change reference
+  const handleCategorySelect = useCallback((category: string, _index: number, isInitial: boolean) => {
+    // Skip URL update on initial mount to prevent loops
+    if (isInitial) return
+    
     setSelectedCategory(category)
-  }, [])
+    
+    // Update URL with the new category (always include it)
+    const slug = categoryToSlug(category)
+    const params = new URLSearchParams(searchParamsRef.current.toString())
+    params.set("category", slug)
+    
+    const newUrl = `${pathnameRef.current}?${params.toString()}`
+    routerRef.current.replace(newUrl, { scroll: false })
+  }, []) // Empty deps - callback reference never changes
 
   return (
     <div className="container mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
@@ -149,6 +222,7 @@ export function PortfolioContent({ projects }: PortfolioContentProps) {
               <span className="portfolio-label">Check-out my projects with ...</span>
               <PortfolioSelector
                 items={PORTFOLIO_CATEGORIES}
+                initialIndex={initialIndexRef.current ?? 0}
                 onSelect={handleCategorySelect}
               />
             </span>
