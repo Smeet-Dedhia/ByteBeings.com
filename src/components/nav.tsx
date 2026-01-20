@@ -18,7 +18,7 @@ export function Nav() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between gap-4 px-6 sm:px-6 lg:px-8">
-        <Link href="/" className="text-xl font-bold">
+        <Link href="/" className="text-lg sm:text-xl font-semibold">
           ByteBeings
         </Link>
         <div className="flex items-center gap-1 sm:gap-2">

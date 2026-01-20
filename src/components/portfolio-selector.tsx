@@ -45,7 +45,7 @@ export function PortfolioSelector({
     let isScrolling = false
     let scrollTimeout: NodeJS.Timeout | null = null
     let lastWheelAt = 0
-    const wheelLockMs = 450
+    const wheelLockMs = 750
 
     const fitViewportWidth = () => {
       const line = container.closest(".portfolio-line") as HTMLElement | null
@@ -73,8 +73,10 @@ export function PortfolioSelector({
       ) as HTMLElement | null
       if (!centerItem) return
 
-      const maxSize = 1
-      const minSize = 0.7
+      // Slightly smaller range so long labels fit better on narrow screens
+      // Use em to stay relative to inherited font-size
+      const maxSize = 1.0
+      const minSize = 0.6
       const availableWidth = viewport.clientWidth * 0.92
 
       centerItem.style.fontSize = `${maxSize}em`

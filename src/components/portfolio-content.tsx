@@ -16,7 +16,7 @@ interface PortfolioContentProps {
 // Hardcoded categories in desired order
 const PORTFOLIO_CATEGORIES = [
   "Agentic AI & RL",
-  "Web Dev & Cloud",
+  "Full-Stack & Cloud",
   "NLP & Deep Learning",
   "Applied ML",
   "Statistical ML",
@@ -34,7 +34,7 @@ const CATEGORY_WORK_EXP: Record<string, { name: string; anchor: string }[]> = {
     { name: "Project Dronaid", anchor: "exp-project-dronaid" },
     { name: "Turtlemint", anchor: "exp-turtlemint" },
   ],
-  "Web Dev & Cloud": [
+  "Full-Stack & Cloud": [
     { name: "ION Group", anchor: "exp-ion-group" },
   ],
   "Applied ML": [
@@ -46,13 +46,13 @@ const CATEGORY_WORK_EXP: Record<string, { name: string; anchor: string }[]> = {
 
 function ProjectCard({ project }: { project: PortfolioProject }) {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-border h-full">
-      <CardHeader className="pb-3">
-        <h3 className="text-lg font-semibold leading-tight group-hover:text-primary transition-colors">
+    <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-border hover:border-border h-full overflow-hidden">
+      <CardHeader className="p-3 sm:p-4 lg:p-6 pb-2 sm:pb-3">
+        <h3 className="text-sm sm:text-base lg:text-lg font-semibold leading-tight group-hover:text-primary transition-colors break-words hyphens-auto">
           {project.title}
         </h3>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className="p-3 sm:p-4 lg:p-6 pt-0 space-y-2 sm:space-y-3">
         {/* Links */}
         <div className="flex flex-wrap gap-2">
           {project.githubUrl && (
@@ -60,10 +60,10 @@ function ProjectCard({ project }: { project: PortfolioProject }) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 border-2 border-white dark:border-zinc-900 hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-xs text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-600 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
             >
               <svg
-                className="w-4 h-4"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-900 dark:text-zinc-100 shrink-0"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -82,10 +82,10 @@ function ProjectCard({ project }: { project: PortfolioProject }) {
               href={project.designSpecUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-md bg-blue-600 dark:bg-blue-500 text-white border-2 border-blue-400 dark:border-blue-400 hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 py-1 rounded-md bg-blue-600 dark:bg-blue-500 text-xs text-white border border-blue-400 dark:border-blue-400 hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
             >
               <svg
-                className="w-4 h-4"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -98,15 +98,15 @@ function ProjectCard({ project }: { project: PortfolioProject }) {
                   d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 />
               </svg>
-              Design Spec
+              Spec
             </a>
           )}
         </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1 sm:gap-1.5">
           {project.tags.map((tag) => (
-            <Badge key={tag} variant="outline" className="text-xs">
+            <Badge key={tag} variant="outline" className="text-[10px] sm:text-xs px-1.5 sm:px-2">
               {tag}
             </Badge>
           ))}
@@ -141,10 +141,10 @@ export function PortfolioContent({ projects }: PortfolioContentProps) {
     <div className="container mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <MotionSection className="mb-12">
         <FadeIn>
-          <h1 className="heading-shine portfolio-title font-medium leading-tight mb-2 sm:mb-3 text-center">
+          <h1 className="heading-shine portfolio-title font-medium leading-tight mb-2 lg:mb-3 text-center whitespace-nowrap lg:whitespace-normal">
             A proud showcase of my Projects
           </h1>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-medium leading-tight mb-5 text-center">
+          <p className="text-xl lg:text-4xl font-medium leading-tight mb-5 text-center">
             <span className="portfolio-line justify-center">
               <span className="portfolio-label">Check-out my projects with ...</span>
               <PortfolioSelector

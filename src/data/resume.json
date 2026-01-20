@@ -18,8 +18,9 @@
       "endDate": null,
       "logo": "/logos/microsoft_logo.jpg",
       "description": [
-        "Agentic AI System to optimize SQL queries to improve Data Engineers' productivity",
-        "Reinforcement Learning based LLM fine tuning using BIRD - CRITIC dataset"
+        "Working on a Data Science Capstone project sponsored by Microsoft",
+        "Building an Agentic AI System to optimize SQL queries to improve Data Engineers' productivity",
+        "Goal is to use Reinforcement Learning based LLM fine tuning using BIRD - CRITIC dataset which will assign rewards based on success, semantics and efficiency"
       ],
       "technologies": ["GPT-OSS", "T-SQL Server", "LangChain", "DsPy", "Azure"]
     },
@@ -113,8 +114,8 @@
       "degree": "Master of Science (MS), Data Science",
       "institution": "University of Washington",
       "location": "Seattle, WA, USA",
-      "startDate": "Sep 2024",
-      "endDate": "Mar 2026",
+      "startDate": "2024",
+      "endDate": "2026",
       "gpa": "3.9 GPA",
       "logo": "/logos/university_of_washington_logo.jpg",
       "psst": "Graduating in March'26. Looking for full-time roles from May!"
@@ -181,8 +182,12 @@
       "description": "National level hackathon, winning INR 50K with PheonixGraph"
     },
     {
-      "title": "1st Place - eSamudaay & AppLab Hackathon",
-      "description": "Won INR 25K with Rehabify"
+      "title": "1st Place - AppLab Hackathon",
+      "description": "First place winner with INR 25K prize"
+    },
+    {
+      "title": "1st Place - eSamudaay Hackathon",
+      "description": "First place winner with INR 25K prize"
     }
   ],
   "meta": {

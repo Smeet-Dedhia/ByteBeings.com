@@ -24,12 +24,14 @@ export default async function ResumePage() {
               >
                 {resume.name}
               </h1>
-              <p className="mt-2 text-xl text-muted-foreground">{resume.headline}</p>
-              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-muted-foreground">
+              <p className="mt-2 text-sm sm:text-base md:text-xl text-muted-foreground whitespace-nowrap">
+                FullStack + AI Developer | ML Engineer | Data Scientist
+              </p>
+              <div className="mt-2 flex flex-nowrap items-center gap-x-3 text-xs sm:text-sm text-muted-foreground overflow-x-auto">
                 {resume.location && (
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4" />
-                    <span>{resume.location}</span>
+                    <span className="whitespace-nowrap">{resume.location}</span>
                   </div>
                 )}
                 {resume.links?.email && (
@@ -38,7 +40,7 @@ export default async function ResumePage() {
                     className="flex items-center gap-2 hover:text-foreground transition-colors"
                   >
                     <Mail className="h-4 w-4" />
-                    <span>{resume.links.email}</span>
+                    <span className="whitespace-nowrap">{resume.links.email}</span>
                   </Link>
                 )}
               </div>
@@ -46,13 +48,13 @@ export default async function ResumePage() {
 
             {/* Links */}
             {resume.links && (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-nowrap gap-2">
                 {resume.links.linkedin && (
                   <Link
                     href={resume.links.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-1.5 text-sm text-muted-foreground border border-border rounded-md transition-colors hover:text-foreground hover:bg-muted"
+                    className="flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm text-muted-foreground border border-border rounded-md whitespace-nowrap transition-colors hover:text-foreground hover:bg-muted"
                   >
                     <Linkedin className="h-4 w-4" />
                     LinkedIn
@@ -63,7 +65,7 @@ export default async function ResumePage() {
                     href={resume.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-1.5 text-sm text-muted-foreground border border-border rounded-md transition-colors hover:text-foreground hover:bg-muted"
+                    className="flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm text-muted-foreground border border-border rounded-md whitespace-nowrap transition-colors hover:text-foreground hover:bg-muted"
                   >
                     <Github className="h-4 w-4" />
                     GitHub
@@ -74,7 +76,7 @@ export default async function ResumePage() {
                     href={resume.links.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-1.5 text-sm text-muted-foreground border border-border rounded-md transition-colors hover:text-foreground hover:bg-muted"
+                    className="flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm text-muted-foreground border border-border rounded-md whitespace-nowrap transition-colors hover:text-foreground hover:bg-muted"
                   >
                     <Globe className="h-4 w-4" />
                     Website
@@ -85,7 +87,7 @@ export default async function ResumePage() {
                     href={resume.links.leetcode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-1.5 text-sm text-muted-foreground border border-border rounded-md transition-colors hover:text-foreground hover:bg-muted"
+                    className="flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm text-muted-foreground border border-border rounded-md whitespace-nowrap transition-colors hover:text-foreground hover:bg-muted"
                   >
                     <Code2 className="h-4 w-4" />
                     LeetCode
@@ -95,13 +97,13 @@ export default async function ResumePage() {
             )}
 
             {/* Action Buttons */}
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-nowrap gap-2">
               {resume.links?.resumePdf && (
                 <Link
                   href={resume.links.resumePdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium transition-colors hover:bg-primary/90"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-primary text-primary-foreground text-xs sm:text-sm font-medium whitespace-nowrap transition-colors hover:bg-primary/90"
                 >
                   <FileDown className="h-4 w-4" />
                   Resume - PDF
@@ -110,7 +112,7 @@ export default async function ResumePage() {
               <div className="relative">
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium transition-colors hover:bg-primary/90"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-primary text-primary-foreground text-xs sm:text-sm font-medium whitespace-nowrap transition-colors hover:bg-primary/90"
                 >
                   <Globe className="h-4 w-4" />
                   Projects Portfolio →
@@ -151,8 +153,10 @@ export default async function ResumePage() {
                             </span>
                           </div>
                         )}
-                        {/* Institution */}
-                        <p className="text-xs font-medium text-muted-foreground line-clamp-1">{edu.institution}</p>
+                        {/* Institution - show full name, even on mobile */}
+                        <p className="text-[11px] sm:text-xs font-medium text-muted-foreground">
+                          {edu.institution}
+                        </p>
                         {/* Degree */}
                         <h3 className="text-sm font-semibold leading-tight mt-1 line-clamp-2">{edu.degree}</h3>
                         {/* Dates */}
