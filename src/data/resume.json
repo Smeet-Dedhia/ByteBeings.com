@@ -11,20 +11,6 @@
   },
   "experience": [
     {
-      "role": "Data Science Capstone Project",
-      "company": "Microsoft",
-      "location": "Seattle, WA, USA",
-      "startDate": "Sep 2025",
-      "endDate": "Mar 2026",
-      "logo": "/logos/microsoft_logo.jpg",
-      "description": [
-        "Sequel2SQL: An agentic LLM + RAG framework for SQL error diagnosis, optimization & correction.",
-        "AST based targeting: Designed AST-based, segment-level parsing and transformation layers to selectively process large queries for memory efficiency and apply targeted optimization strategies.",
-        "6% improvement over baseline on the BIRD-CRITIC Benchmark for NL to SQL task performance."
-      ],
-      "technologies": ["GPT-OSS", "T-SQL Server", "LangChain", "DsPy", "Azure"]
-    },
-    {
       "role": "Software Engineer",
       "company": "University of Washington - IT",
       "location": "Seattle, WA, USA",
@@ -53,6 +39,20 @@
         "Built NextJS ChatUI with chat streaming for LLM APIs & Server-Sent-Events to broadcast realtime agent status. Integrated UI analytics libraries to track user engagement data."
       ],
       "technologies": ["Node.js", "Langchain", "Azure", "Spring Boot", "Java", "Kubernetes", "NextJS", "React", "MCP"]
+    },
+    {
+      "role": "Data Science Capstone Project",
+      "company": "Microsoft",
+      "location": "Seattle, WA, USA",
+      "startDate": "Sep 2025",
+      "endDate": "Mar 2026",
+      "logo": "/logos/microsoft_logo.jpg",
+      "description": [
+        "Sequel2SQL: An agentic LLM + RAG framework for SQL error diagnosis, optimization & correction.",
+        "AST based targeting: Designed AST-based, segment-level parsing and transformation layers to selectively process large queries for memory efficiency and apply targeted optimization strategies.",
+        "6% improvement over baseline on the BIRD-CRITIC Benchmark for NL to SQL task performance."
+      ],
+      "technologies": ["GPT-OSS", "T-SQL Server", "LangChain", "DsPy", "Azure"]
     },
     {
       "role": "Software Engineer",
