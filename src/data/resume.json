@@ -15,7 +15,7 @@
       "company": "Microsoft",
       "location": "Seattle, WA, USA",
       "startDate": "Sep 2025",
-      "endDate": null,
+      "endDate": "Mar 2026",
       "logo": "/logos/microsoft_logo.jpg",
       "description": [
         "Sequel2SQL: An agentic LLM + RAG framework for SQL error diagnosis, optimization & correction.",
