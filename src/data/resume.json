@@ -18,95 +18,70 @@
       "endDate": null,
       "logo": "/logos/microsoft_logo.jpg",
       "description": [
-        "Working on a Data Science Capstone project sponsored by Microsoft",
-        "Building an Agentic AI System to optimize SQL queries to improve Data Engineers' productivity",
-        "Goal is to use Reinforcement Learning based LLM fine tuning using BIRD - CRITIC dataset which will assign rewards based on success, semantics and efficiency"
+        "Sequel2SQL: An agentic LLM + RAG framework for SQL error diagnosis, optimization & correction.",
+        "AST based targeting: Designed AST-based, segment-level parsing and transformation layers to selectively process large queries for memory efficiency and apply targeted optimization strategies.",
+        "6% improvement over baseline on the BIRD-CRITIC Benchmark for NL to SQL task performance."
       ],
       "technologies": ["GPT-OSS", "T-SQL Server", "LangChain", "DsPy", "Azure"]
     },
     {
-      "role": "ML Engineer Intern",
+      "role": "Software Engineer",
+      "company": "University of Washington - IT",
+      "location": "Seattle, WA, USA",
+      "startDate": "Mar 2025",
+      "endDate": null,
+      "logo": "/logos/university_of_washington_logo.jpg",
+      "description": [
+        "Architected data pipelines on AWS (S3, Athena, Redshift) using Terraform to ingest and process org-wide digital assets (websites, PDFs, documents)",
+        "Automated compliance evaluation with WCAG 2.1 standards by integrating Adobe APIs into the pipeline to generate accessibility metrics and reports for all digital assets."
+      ],
+      "technologies": ["AWS", "Terraform", "S3", "Athena", "Redshift", "Adobe APIs"]
+    },
+    {
+      "role": "Software Engineer (Co-Op)",
       "company": "Intuitive",
       "location": "Sunnyvale, CA, USA",
       "startDate": "Jun 2025",
-      "endDate": null,
+      "endDate": "Mar 2026",
       "logo": "/logos/intuitivesurgical_logo.jpg",
       "description": [
-        "Proposed, Designed & Developed a multi-agent AI Copilot MVP - chatbot to help users operate complex legacy apps, with responses grounded on internal docs & training videos with RAG",
-        "AI Skills - Screen Context Aware, Knowledge from Native APIs & Workflow Guidance",
-        "Integrated into Appian, Service Now & App UI to automate up to 65% of support tickets"
+        "Developed a framework with Node.js, Langchain & Azure for 15+ Enterprise Apps, enabling rapid infusion of AI into enterprise workflows, resulting in 65% reduction in support tickets.",
+        "Added Spring Boot interface to expose core Java server APIs, unlocking legacy data AI.",
+        "Ensured reduction in Azure & LLM API costs by using on-prem GPUs for RAG and building an LLM inference service adaptive to demand with Kubernetes.",
+        "Reduced chat latency from 90 to 20 sec by tuning multi-threading for optimal GPU memory utilization & batching, also resulting in 4x boost in RAG throughput.",
+        "Curated domain-specific datasets & constructed evaluation benchmarks to quantify AI performance on retrieval precision, grounding accuracy, hallucination rate, task success etc.",
+        "Built NextJS ChatUI with chat streaming for LLM APIs & Server-Sent-Events to broadcast realtime agent status. Integrated UI analytics libraries to track user engagement data."
       ],
-      "technologies": ["GPT-OSS", "LangChain", "LangGraph", "DsPy", "ChromaDB", "MCP", "Docker", "Next.js"]
+      "technologies": ["Node.js", "Langchain", "Azure", "Spring Boot", "Java", "Kubernetes", "NextJS", "React", "MCP"]
     },
     {
-      "role": "Software Developer (GenAI) Intern",
-      "company": "ATX Labs",
-      "location": "Pune, India",
-      "startDate": "Jun 2024",
-      "endDate": "Aug 2024",
-      "logo": "/logos/atxlabs_logo.jpg",
-      "description": [
-        "Configured Computer-Use AI Agents to perform stepwise Automated Web GUI Testing",
-        "Fine-tuned Llama3 along with Context Engineering to optimize speed & costs"
-      ],
-      "technologies": ["Llama3", "Computer-Use AI", "Context Engineering"]
-    },
-    {
-      "role": "Software Developer",
+      "role": "Software Engineer",
       "company": "ION Group",
       "location": "Pune, India",
       "startDate": "Jan 2024",
       "endDate": "May 2024",
       "logo": "/logos/iongroup_logo.jpg",
       "description": [
-        "As part of the Core Architecture Team, contributed to Web SDK for FinTech Platforms",
-        "Developed features for frontend components like calendar widgets & smart tables, using concepts like state management, custom events, dependency injection & ng directives",
-        "Migrated legacy components from Angular.js to modern Web Components in Angular 17",
-        "Practical exposure to enterprise CI/CD pipelines, DevOps & test-driven development"
+        "As part of the Core Architecture Team, developed WebSDK serving Fortune500 clients, enabling consistent UI for 25+ downstream apps, optimized for low latency applications in finance.",
+        "Engineered UI components like Calendar widgets, smart tables & autocomplete-search. using state management, event-driven patterns, dependency injection & migrated legacy UI from JS to TS.",
+        "Orchestrated seamless data flow between the frontend SDK and Java REST APIs, leveraging Kafka and Pub/Sub for high-throughput, event-driven messaging.",
+        "Owned feature lifecycle end-to-end with & unit testing, acceptance tests & Jenkins."
       ],
-      "technologies": ["Angular", "TypeScript", "Node.js", "PySelenium", "Jenkins"]
+      "technologies": ["Angular", "TypeScript", "Java", "Kafka", "Pub/Sub", "Jenkins"]
     },
     {
-      "role": "Data Scientist Intern",
-      "company": "UPL Limited",
-      "location": "Bengaluru, India",
-      "startDate": "Jun 2023",
-      "endDate": "Aug 2023",
-      "logo": "/logos/upl_ltd_logo.jpg",
-      "description": [
-        "Worked on the predictive Customer Churn model which improved retention for 500+ customers",
-        "Automated data preprocessing & feature engineering pipelines using PySpark and deployed workflows on Azure Databricks, reducing manual effort by 80%",
-        "Integrated MLflow for MLOps with continuous tracking + training & version control",
-        "Saved USD 1500/year for UPL by replacing paid APIs with open source alternatives"
-      ],
-      "technologies": ["Databricks", "MLflow", "Scikit-learn", "pandas", "shap", "PySpark"]
-    },
-    {
-      "role": "Software & AI Head",
-      "company": "Project Dronaid",
+      "role": "AI Systems Engineer",
+      "company": "Dronaid",
       "location": "Manipal, India",
       "startDate": "Jul 2022",
-      "endDate": "Jul 2023",
+      "endDate": "Sep 2023",
       "logo": "/logos/1689095453140.jpg",
-      "psst": "My entry into startup culture, fund raising & hustling",
       "description": [
-        "As a board member, involved with Funding, Planning and Managing 40+ team members",
-        "As AI Head, guided the AI team of 10 to deploy Computer Vision applications for drones"
+        "Integrated CV models with robotics stack across hardware, embedded & software layers. Improved realtime inference for YOLO model from 5 to 12 FPS by switching from python to C++, tuning model precision, and various GPU Optimizations with Triton, TensorRT, NSight, CUDA.",
+        "Performed system-level profiling to identify bottlenecks across CPU, GPU, Memory, I/O. Troubleshooted end-to-end issues across hardware, embedded & software layers.",
+        "Designed a multi-threaded processing to separate camera capture, preprocessing, inference stages for stable frame rates. Using concurrency primitives in OpenMP & MPI."
       ],
-      "technologies": ["Computer Vision", "Python", "Deep Learning", "Drones"]
-    },
-    {
-      "role": "ML (Computer Vision) Intern",
-      "company": "Turtlemint",
-      "location": "Remote, India",
-      "startDate": "Dec 2022",
-      "endDate": "Jan 2023",
-      "logo": "/logos/turtlemint_logo.jpg",
-      "description": [
-        "Developed a Computer Vision model to identify damage of Automobiles & Crops for insurance purposes",
-        "Delivered a complete POC, right from Research to Implementation to Business Demo"
-      ],
-      "technologies": ["TensorFlow", "PyTorch", "OpenCV", "Few Shot Learning"]
+      "technologies": ["Computer Vision", "C++", "Python", "YOLO", "Triton", "TensorRT", "CUDA", "OpenMP"]
     }
   ],
   "education": [
@@ -136,9 +111,31 @@
   ],
   "projects": [
     {
+      "name": "ByteBeingsBot",
+      "description": "Modular Telegram bot with router agent that delegates natural language to pluggable specialist agents.",
+      "technologies": ["Agentic AI", "Telegram Bot"],
+      "category": "Agentic AI",
+      "link": "https://github.com/Smeet-Dedhia/ByteBeingsBot"
+    },
+    {
+      "name": "PrompTree",
+      "description": "Chain modular context blocks on a drag-and-drop board to build prompts for ChatGPT, Gemini, and Claude, eliminating the need to repeat yourself.",
+      "technologies": ["Agentic AI", "LLM Tooling"],
+      "category": "Agentic AI",
+      "link": "https://github.com/Smeet-Dedhia/PrompTree"
+    },
+    {
+      "name": "TradeSight",
+      "description": "TradeSight is a self-hosted wealth tracker that consolidates fragmented stock portfolios across Indian brokers into a secure, local dashboard. Aiming to allow active optimization for the consolidated portfolio by tracking sector-wise risk, tax-loss harvesting alerts and benchmark historical CAGR.",
+      "technologies": ["Agentic AI", "FinTech"],
+      "category": "Agentic AI",
+      "link": "https://github.com/Smeet-Dedhia/TradeSight"
+    },
+    {
       "name": "PheonixGraph",
       "description": "Award-winning project at HackRx by Bajaj-Finserv, securing 1st Runner Up at the national level competition.",
       "technologies": ["Full Stack", "FinTech"],
+      "category": "Hackathons",
       "highlights": [
         "National level hackathon recognition",
         "Won INR 50K prize"
@@ -148,6 +145,7 @@
       "name": "Rehabify",
       "description": "Healthcare-focused application that won 1st Place at both eSamudaay Hackathon and AppLab Hackathon.",
       "technologies": ["Healthcare Tech", "Mobile App"],
+      "category": "Hackathons",
       "highlights": [
         "Double hackathon winner",
         "Won INR 25K prize"
