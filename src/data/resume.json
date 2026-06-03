@@ -111,27 +111,6 @@
   ],
   "projects": [
     {
-      "name": "ByteBeingsBot",
-      "description": "Modular Telegram bot with router agent that delegates natural language to pluggable specialist agents.",
-      "technologies": ["Agentic AI", "Telegram Bot"],
-      "category": "Agentic AI",
-      "link": "https://github.com/Smeet-Dedhia/ByteBeingsBot"
-    },
-    {
-      "name": "PrompTree",
-      "description": "Chain modular context blocks on a drag-and-drop board to build prompts for ChatGPT, Gemini, and Claude, eliminating the need to repeat yourself.",
-      "technologies": ["Agentic AI", "LLM Tooling"],
-      "category": "Agentic AI",
-      "link": "https://github.com/Smeet-Dedhia/PrompTree"
-    },
-    {
-      "name": "TradeSight",
-      "description": "TradeSight is a self-hosted wealth tracker that consolidates fragmented stock portfolios across Indian brokers into a secure, local dashboard. Aiming to allow active optimization for the consolidated portfolio by tracking sector-wise risk, tax-loss harvesting alerts and benchmark historical CAGR.",
-      "technologies": ["Agentic AI", "FinTech"],
-      "category": "Agentic AI",
-      "link": "https://github.com/Smeet-Dedhia/TradeSight"
-    },
-    {
       "name": "PheonixGraph",
       "description": "Award-winning project at HackRx by Bajaj-Finserv, securing 1st Runner Up at the national level competition.",
       "technologies": ["Full Stack", "FinTech"],

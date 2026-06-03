@@ -1,6 +1,36 @@
 {
   "projects": [
     {
+      "title": "ByteBeingsBot",
+      "date": "2026-06",
+      "category": "Agentic AI & RL",
+      "description": "Modular Telegram bot with router agent that delegates natural language to pluggable specialist agents.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/ByteBeingsBot",
+      "designSpecUrl": "",
+      "tags": ["Agentic AI", "Telegram Bot"],
+      "featured": true
+    },
+    {
+      "title": "PrompTree",
+      "date": "2026-06",
+      "category": "Agentic AI & RL",
+      "description": "Chain modular context blocks on a drag-and-drop board to build prompts for ChatGPT, Gemini, and Claude, eliminating the need to repeat yourself.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/PrompTree",
+      "designSpecUrl": "",
+      "tags": ["Agentic AI", "LLM Tooling"],
+      "featured": true
+    },
+    {
+      "title": "TradeSight",
+      "date": "2026-06",
+      "category": "Agentic AI & RL",
+      "description": "TradeSight is a self-hosted wealth tracker that consolidates fragmented stock portfolios across Indian brokers into a secure, local dashboard. Aiming to allow active optimization for the consolidated portfolio by tracking sector-wise risk, tax-loss harvesting alerts and benchmark historical CAGR.",
+      "githubUrl": "https://github.com/Smeet-Dedhia/TradeSight",
+      "designSpecUrl": "",
+      "tags": ["Agentic AI", "FinTech"],
+      "featured": true
+    },
+    {
       "title": "Statistical Analysis of University Salaries",
       "date": "2025-03",
       "category": "Statistical ML",
