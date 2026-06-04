@@ -1,0 +1,117 @@
+Preference Model Assessment
+By Smeet Dedhia (smeetd1502@gmail.com)
+1. Environment Description
+Environment Proposal: Deterministic PostgreSQL Sandbox for Query Plan Optimization
+The Natural Language to SQL task involves the semantic translation of human intent into executable, deterministic database queries. While modern Large Language Models have achieved high accuracy on standard benchmarks utilizing simplified toy schemas, enterprise-grade NL-to-SQL remains a complex unsolved challenge. It requires a model to perform advanced schema linking across highly normalized tables and navigate intricate foreign-key relationships. Generating a valid query is just one part, with the challenges lying in generating highly efficient queries which minimize computation and also to translate ambiguous user prompts into query action plans.
+Hence, I propose a Reinforcement Learning from Execution Feedback (RLEF) environment for the Natural Language to SQL (NL-to-SQL) task.
+(Refer to Q6 for my motivation to select this project)
+The environment would operate within an isolated container running a live PostgreSQL engine. The core objective would be algorithmic refactoring: transforming a functionally correct but computationally inefficient baseline query into a highly optimized execution plan.
+* State Space (Observation): The environment would initialize with a highly normalized, enterprise-scale schema (like in BIRD-CRITIC datasets) populated with millions of simulated rows and intentional indexing bottlenecks. The model would be provided with the schema definitions, database statistics and the unoptimized baseline query.
+
+
+* Action Space: The environment would enforce a two-step generation process. First, the LLM would output an explicit reasoning trace analyzing query planner constraints and intended join strategies. Second, it would output the refactored SQL query.
+
+
+* Reward Signal: A deterministic, multi-level evaluation pipeline would measure both semantic equivalence and physical execution cost using a judge based on postgres execution engine.
+Why This Environment Would Be Interesting:
+This design would provide a deterministic judge and rewards, and hence avoid the subjective LLM-as-a-Judge method which can be biased. It aids in shifting the optimization target from basic syntactic accuracy to strict hardware efficiency. 
+Specifically, it would address three critical bottlenecks in current NL-to-SQL evaluation systems:
+1. Bridging the Accuracy vs. Efficiency Gap: Standard Text-to-SQL environments reward models purely for returning the correct dataset, even if the query executes a catastrophic nested-loop. By utilizing the PostgreSQL query planner cost and buffer read metrics as the continuous reward signal, the proposed environment would force the model to learn index utilization, hash joins, and optimal execution paths.
+2. Mitigating Reward Hacking: Traditional RL loops are vulnerable to models hardcoding answers by inspecting the data. Validating against a live engine with dynamic data states would strictly penalize this superficial logic.
+3. Deterministic Evaluation: The hardware-grounded metrics provided by the database engine would be absolute. This would provide a reliable and reproducible gradient for RL fine-tuning, eliminating the subjectivity and drift inherent to LLM evaluators.
+2. Tools, packages and data for the environment
+To ensure the environment accurately tests the model's optimization skills without risking data corruption, we require a controlled database setup and a specific testing pipeline. This architecture reuses and extends the Python testing infrastructure I built for my Sequel2SQL capstone project.
+System and Execution Tooling: 
+Database Engine: A live PostgreSQL 15 instance, configured to track internal execution metrics like disk reads and total processing time.
+* Execution Packages: psycopg2 (to execute queries and retrieve the execution cost from the database) and pandas (to compare the final output tables).
+* Validation Packages: sqlglot to parse the SQL text and block destructive commands (like DROP or DELETE) before they ever reach the database.
+For my previous Sequel2SQL project, I built a Python orchestrator that safely wraps generated SQL, handles database timeouts, and checks if two output tables match exactly. That pipeline can be reused here directly. The only modification is adding a step to run an EXPLAIN command on the LLM's query, which uses PostgreSQL engine to output a JSON summary of how hard the engine had to work to process the code, which becomes our continuous reward. 
+Dataset Creation and Setup:
+Providing a model with a small, simple dataset is not enough to test optimization. The environment requires a large, realistic data state to force the LLM to make efficiency decisions.
+* We use simulated SQL databases from BIRD-CRITIC which contain a large number of tables and sample questions which require complex indexing and joins to answer.
+
+
+* Then to improve execution efficiency, we need "slow queries” which the LLM would then attempt to improve.  We create these by taking optimal, fast-running queries and intentionally degrading their logic. For example, we might take a query that uses a highly efficient JOIN to merge two tables, and rewrite it using a nested loop that forces the database to search the second table row-by-row for every single entry. We also intentionally remove obvious indices from the database schema, forcing the database to scan the entire hard drive to find specific records.
+
+
+3. The Prompt
+
+
+Task: PostgreSQL Query Optimization
+Your objective is to optimize an inefficient PostgreSQL query. The baseline query is functionally correct but computationally expensive. You must rewrite it to significantly reduce the query planner's execution cost and minimize physical buffer reads.
+Workspace Context: You have access to the following files to help you make database-aware query optimization decisions:
+* /workspace/schema.sql: The database schema, including all table structures and foreign keys.
+* /workspace/db_stats.json: The live database statistics, including table row counts, distinct value estimates, and existing indices.
+* /workspace/slow_query.sql: The inefficient target query you need to optimize.
+Strict Rules:
+1. Semantic Equivalence: Your optimized query must return the exact same rows, columns, and data types as the baseline query.
+2. Read-Only: You may only use Data Manipulation Language SELECT statements. You are strictly forbidden from using INSERT, UPDATE, DROP, or altering the schema.
+3. Database Optimization: You must base your join strategies on the actual table sizes and index metadata provided in db_stats.json. Do not hallucinate indices that do not exist.
+Formatting Instructions:
+<include as needed>
+
+
+4. The Judge
+Because AI evaluation of code is often subjective and prone to reward hacking, the judge for this environment must be a multi-stage, deterministic execution pipeline. It will run against an isolated PostgreSQL instance and evaluate the LLM's query across four escalating levels of rigorous validation.
+Level 1: Syntax and Safety Validation (Binary)
+Before touching the database, the judge parses the generated SQL using a strict AST (Abstract Syntax Tree) parser.
+* Fail Condition: If the LLM generates invalid SQL syntax, hallucinates table names, or includes destructive commands (like DROP, INSERT, ALTER), the judge immediately halts and returns a Score of 0.
+Level 2: Execution and Equivalence Check (Binary) 
+The judge executes both the baseline query and the LLM's optimized query. It loads both outputs into dataframes, sorts them programmatically (to account for non-deterministic row ordering when no ORDER BY is present), and compares them.
+* Fail Condition: If the query hangs and hits the strict timeout threshold, or if the resulting data, column structure, or data types do not perfectly match the baseline output, the judge returns a Score of 0.
+Level 3: Query Planner Efficiency (Continuous Score) 
+If the query is structurally safe and perfectly accurate, the judge runs an EXPLAIN command to analyze how the database executed it. It extracts the PostgreSQL query planner's total estimated execution cost.
+* Success Condition: The judge calculates a baseline-to-optimized cost ratio. A lower cost yields a higher continuous score, directly rewarding the LLM for utilizing faster algorithmic paths.
+Level 4: Hardware I/O and Buffer Analysis (Continuous Modifier) 
+Finally, the judge utilizes PostgreSQL's pg_stat_statements extension to measure the actual physical disk reads (shared blocks read/hit) required to execute the query.
+* Success/Fail Condition: Even if a query looks mathematically efficient, if it forces the engine to scan massive amounts of unindexed data from the disk, the judge applies a penalty multiplier. Conversely, queries that successfully leverage existing indices to minimize memory buffers receive a bonus multiplier.
+
+
+5. Addressing Reward Hacking & Reward Denial
+RL environments for code generation can be susceptible to reward hacking. Hence, the judge and environment tooling must be designed to mitigate the edge cases. Forms of reward hacking include:
+
+
+Literal Value Matching: The LLM may be able to peek at the desired output dataset and then use string literals to create a query which matches the baseline result. This can be mitigated by adding a hidden test dataset replica which changes the literals, and hence failing the equivalence checks.
+
+
+Empty Result Hacks: The LLM might try to append clauses like LIMIT 0. This instantly reduces the execution cost to near zero, tricking the efficiency score. This is mitigated because the equivalence check will fail when comparing an empty output to the baseline's populated output.
+
+
+Planner Manipulation: The LLM might try to use database hints or strange type casts to artificially lower the PostgreSQL planner's estimated cost. We can mitigate this by strictly using the EXPLAIN ANALYZE command to score based on actual hardware execution time and buffer reads, rather than theoretical estimates.
+
+
+Cases of reward denial can also exist, where a perfectly correct query is unfairly penalized. These cases include:
+
+
+Row Order Non-Determinism: Query outputs are not sorted if the ORDER BY clause is not used. This may cause a mismatch with the ground truth baseline. Hence the judge must always apply a sort before making equivalence checks.
+
+
+Floating-Point Variations: Faster parallel execution plans can calculate aggregations (like SUM or AVG) in a slightly different order than sequential plans. This causes tiny rounding differences at the decimal level. This can be mitigated by having the judge use a relative tolerance function (like numpy.isclose) when comparing numeric columns, rather than checking for exact string matches.
+
+
+
+
+
+
+6. Why did I choose this environment
+This environment is inspired by my recent Capstone Project with Microsoft - Sequel2SQL. I have also read some recent literature on improving LLM performance on NL to SQL with RL, with the most insightful being SQL-R1, NeurIPS 2025.
+My previous project - Sequel2SQL addressed the NL to SQL generation, and with this proposal, I wish to design a system to generate computationally efficient SQL.
+7. Github & Related Projects
+Github Profile Link: https://github.com/Smeet-Dedhia
+This proposal draws inspiration from my recent project Sequel2SQL - a capstone project sponsored by Microsoft. Please find out more here:
+ A screenshot of a computer
+
+AI-generated content may be incorrect. 
+
+Code Repo: https://github.com/Smeet-Dedhia/sequel2sql
+
+
+Project Report: https://docs.google.com/document/d/17gAweIP77MxeIwOQIlHZC9VZAMdHshYUGuGKCpmux6c/edit?usp=sharing
+
+
+8. Availability & Joining
+I can join from Monday, 18 May 2026 onwards and can work 40 hrs a week.
+
+
+9. Anything else?
+I hope this report provides a good balance in technical depth while also being concise. While I would have liked to explain things in more detail, I believe the current report is sufficient in getting my ideas across.
