@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
-  { href: "/", label: "Home" },
   { href: "/blog", label: "Blog" },
   { href: "/portfolio", label: "Portfolio" },
+  { href: "/showcase", label: "Showcase" },
   { href: "/resume", label: "Resume" },
 ]
 
