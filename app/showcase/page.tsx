@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ChevronRight, Code2, BrainCircuit, Eye, Cpu } from "lucide-react"
+import { ChevronRight, Code2, BrainCircuit, Eye, Cpu, Database } from "lucide-react"
 
 const showcases = [
   {
@@ -14,6 +14,15 @@ const showcases = [
     icon: <Code2 className="w-5 h-5 text-amber-400" />,
     color: "from-amber-600 to-orange-600",
     badge: "Cost & Scale"
+  },
+  {
+    title: "Data Scientist",
+    description: "Transforming raw data into actionable insights to improve healthcare outcomes, ensure compliance, and build enterprise AI infrastructures.",
+    href: "/data-science",
+    image: "/images/showcase/smeet-intuitive.jpg",
+    icon: <Database className="w-5 h-5 text-teal-400" />,
+    color: "from-teal-600 to-emerald-600",
+    badge: "Data & Healthcare AI"
   },
   {
     title: "Reinforcement Learning",
