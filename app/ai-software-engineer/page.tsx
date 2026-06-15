@@ -41,8 +41,60 @@ export default function AISoftwareEngineerShowcase() {
         </div>
       </section>
 
+      {/* Agents - Planning, Orchestration & Testing */}
+      <section className="py-12 sm:py-24 border-t border-white/5 relative bg-slate-950/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+          >
+            <motion.div variants={fadeInUp}>
+              <div className="inline-flex items-center rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-400 mb-4">
+                Orchestration & Evaluation
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-bold text-white mb-6">Agents: Planning, Orchestration & Testing</h2>
+
+              <div className="prose prose-invert">
+                <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+                  Often operating as an AI consultant, I deeply analyze regulated, complex business workflows to architect and deploy <strong>robust agentic automation</strong> strategies.
+                </p>
+                <p className="text-slate-400 text-base sm:text-lg leading-relaxed mt-4">
+                  Moving beyond simple chatbots, I build sophisticated multi-agent systems with mandatory Human-In-The-Loop (HITL) checkpoints and execution traceability to ensure enterprise-grade trust.
+                </p>
+                <p className="text-slate-400 text-base sm:text-lg leading-relaxed mt-4">
+                  To guarantee reliability, I construct rigorous evaluation pipelines, generating synthetic datasets from historical organizational data to systematically optimize prompts and routing logic.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <div className="grid gap-4 sm:gap-6">
+                {[
+                  { title: "Complex Orchestration", desc: "Designing stateful multi-agent workflows to automate highly regulated, multi-step organizational processes.", icon: <Network className="w-5 h-5 text-indigo-400" /> },
+                  { title: "Human-In-The-Loop", desc: "Implementing explicit authorization gates and transparent reasoning traces to build trust and ensure safety.", icon: <Activity className="w-5 h-5 text-indigo-400" /> },
+                  { title: "Rigorous Evaluation", desc: "Synthesizing domain-specific test datasets to empirically benchmark and optimize agent performance before production.", icon: <LineChart className="w-5 h-5 text-indigo-400" /> }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 p-5 rounded-xl border border-indigo-500/10 bg-indigo-500/5 hover:border-indigo-500/30 transition-colors">
+                    <div className="mt-1 bg-slate-900 p-2 rounded-lg border border-slate-800">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-2">{item.title}</h3>
+                      <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section >
+
       {/* Enterprise AI & GPU Optimization */}
-      <section className="py-12 sm:py-24 border-t border-white/5 relative">
+      < section className="py-12 sm:py-24 border-t border-white/5 relative" >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div
             variants={staggerContainer}
@@ -56,7 +108,7 @@ export default function AISoftwareEngineerShowcase() {
                 Compute & Infrastructure
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold text-white mb-6">GPU Optimization & Scalable AI</h2>
-              
+
               <div className="prose prose-invert mb-8">
                 <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
                   Moving beyond basic API wrappers to engineer <strong>production-ready AI infrastructure</strong>. At Intuitive, I architected an enterprise RAG framework that served 15+ applications while strictly managing compute overhead.
@@ -86,48 +138,48 @@ export default function AISoftwareEngineerShowcase() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="relative group w-full h-full min-h-[400px]">
-               <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
-               <div className="relative rounded-2xl p-8 border border-slate-800 bg-slate-900 h-full flex flex-col justify-center gap-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-3 mb-4">
-                    <Activity className="w-7 h-7 text-amber-400" /> Systems Level Engineering
-                  </h3>
-                  <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-slate-800/50">
-                    <Image 
-                      src="/images/showcase/ai-stack.png"
-                      alt="AI Systems Stack"
-                      fill
-                      className="object-contain transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+              <div className="relative rounded-2xl p-8 border border-slate-800 bg-slate-900 h-full flex flex-col justify-center gap-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-3 mb-4">
+                  <Activity className="w-7 h-7 text-amber-400" /> Systems Level Engineering
+                </h3>
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-slate-800/50">
+                  <Image
+                    src="/images/showcase/ai-stack.png"
+                    alt="AI Systems Stack"
+                    fill
+                    className="object-contain transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-amber-400 font-semibold mb-2">Memory Management</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Fine-tuned KV caching and continuous batching algorithms to maximize GPU VRAM utilization without triggering Out-Of-Memory (OOM) errors under heavy load.
+                    </p>
                   </div>
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-amber-400 font-semibold mb-2">Memory Management</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Fine-tuned KV caching and continuous batching algorithms to maximize GPU VRAM utilization without triggering Out-Of-Memory (OOM) errors under heavy load.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-amber-400 font-semibold mb-2">Distributed Workloads</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Built load-balancing layers across Kubernetes clusters to distribute inference tasks dynamically based on real-time node availability and token processing speed.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-amber-400 font-semibold mb-2">Cost Efficiency</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Replaced dependency on per-token cloud pricing with fixed-cost on-prem hardware architectures, heavily optimizing the cost per query for enterprise-scale deployments.
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="text-amber-400 font-semibold mb-2">Distributed Workloads</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Built load-balancing layers across Kubernetes clusters to distribute inference tasks dynamically based on real-time node availability and token processing speed.
+                    </p>
                   </div>
-               </div>
+                  <div>
+                    <h4 className="text-amber-400 font-semibold mb-2">Cost Efficiency</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Replaced dependency on per-token cloud pricing with fixed-cost on-prem hardware architectures, heavily optimizing the cost per query for enterprise-scale deployments.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Edge AI & Low-Level Hardware */}
-      <section className="py-12 sm:py-24 border-t border-white/5 relative bg-slate-950/50">
+      < section className="py-12 sm:py-24 border-t border-white/5 relative bg-slate-950/50" >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div
             variants={staggerContainer}
@@ -141,8 +193,8 @@ export default function AISoftwareEngineerShowcase() {
                 Hardware & Edge AI
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold text-white mb-6">Bare-Metal Edge Optimization</h2>
-              
-              <div className="prose prose-invert mb-8">
+
+              <div className="prose prose-invert mb-8 lg:mb-0">
                 <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
                   Executing AI models on edge devices like Jetson Nano and UAV hardware requires moving beyond Python scripts into deep systems-level engineering.
                 </p>
@@ -150,15 +202,28 @@ export default function AISoftwareEngineerShowcase() {
                   At Dronaid, I ripped out inefficient Python inference pipelines and <strong>rewrote the core perception modules in C++</strong>. By compiling models down to low-level execution engines, I eliminated overhead and doubled hardware performance for mission-critical flight tasks.
                 </p>
               </div>
+            </motion.div>
 
-              <div className="grid gap-4">
+            <motion.div variants={fadeInUp} className="order-2 lg:order-1 relative group w-full">
+              <div className="absolute -inset-1 bg-gradient-to-r from-rose-600 to-red-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+              <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 aspect-[4/3] mb-8">
+                <Image
+                  src="/images/showcase/smeet-drone.jpg"
+                  alt="Edge AI and UAVs"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+
+              <div className="grid gap-4 relative">
                 {[
                   { title: "Inference Acceleration", desc: "More than doubled YOLO real-time inference from 5 FPS to 12 FPS on edge UAV hardware.", icon: <Rocket className="w-5 h-5 text-rose-400" /> },
                   { title: "Low-Level Tooling", desc: "Utilized TensorRT, NVIDIA Triton, and CUDA to optimize neural network layer execution.", icon: <Cpu className="w-5 h-5 text-rose-400" /> },
                   { title: "Concurrency & MPI", desc: "Engineered multi-threaded C++ architectures (OpenMP) separating capture, preprocessing, and inference.", icon: <Layers className="w-5 h-5 text-rose-400" /> }
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 p-4 rounded-xl border border-rose-500/10 bg-rose-500/5">
-                    <div className="mt-1 bg-slate-900 p-2 rounded-lg border border-slate-800">
+                  <div key={i} className="flex gap-4 p-4 rounded-xl border border-rose-500/10 bg-rose-500/5 backdrop-blur-sm">
+                    <div className="mt-1 bg-slate-900 p-2 rounded-lg border border-slate-800 h-fit">
                       {item.icon}
                     </div>
                     <div>
@@ -169,25 +234,12 @@ export default function AISoftwareEngineerShowcase() {
                 ))}
               </div>
             </motion.div>
-
-            <motion.div variants={fadeInUp} className="order-2 lg:order-1 relative group w-full">
-               <div className="absolute -inset-1 bg-gradient-to-r from-rose-600 to-red-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
-               <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 aspect-[4/3]">
-                 <Image 
-                   src="/images/showcase/smeet-drone.jpg" 
-                   alt="Edge AI and UAVs"
-                   fill
-                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                   sizes="(max-width: 768px) 100vw, 50vw"
-                 />
-               </div>
-            </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* 0 to 1 Engineering Section */}
-      <section className="py-12 sm:py-24 border-t border-white/5 relative">
+      < section className="py-12 sm:py-24 border-t border-white/5 relative" >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div
             variants={staggerContainer}
@@ -206,12 +258,12 @@ export default function AISoftwareEngineerShowcase() {
           </motion.div>
 
           <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            
+
             {/* Project 1 */}
             <motion.div variants={fadeInUp} className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900 overflow-hidden group">
               <div className="relative aspect-video overflow-hidden bg-slate-800">
-                <Image 
-                  src="/images/showcase/Trade-Sight-dashboard.png" 
+                <Image
+                  src="/images/showcase/Trade-Sight-dashboard.png"
                   alt="TradeSight Dashboard"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -237,8 +289,8 @@ export default function AISoftwareEngineerShowcase() {
             {/* Project 2 */}
             <motion.div variants={fadeInUp} className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900 overflow-hidden group">
               <div className="relative aspect-video overflow-hidden bg-slate-800">
-                <Image 
-                  src="/images/showcase/PrompTreeVideoDemo.gif" 
+                <Image
+                  src="/images/showcase/PrompTreeVideoDemo.gif"
                   alt="PrompTree Demo"
                   fill
                   unoptimized
@@ -265,8 +317,8 @@ export default function AISoftwareEngineerShowcase() {
             {/* Project 3 */}
             <motion.div variants={fadeInUp} className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900 overflow-hidden group md:col-span-2 lg:col-span-1">
               <div className="relative aspect-video overflow-hidden bg-slate-800">
-                <Image 
-                  src="/images/showcase/ByteBeingsBot-Demo.gif" 
+                <Image
+                  src="/images/showcase/ByteBeingsBot-Demo.gif"
                   alt="ByteBeingsBot Demo"
                   fill
                   unoptimized
@@ -292,7 +344,7 @@ export default function AISoftwareEngineerShowcase() {
 
           </motion.div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   )
 }
