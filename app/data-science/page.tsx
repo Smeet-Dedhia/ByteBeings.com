@@ -225,6 +225,53 @@ export default function DataScienceShowcase() {
         </div>
       </section>
 
+      {/* Statistics & Experiment Design */}
+      <section className="py-12 sm:py-24 border-t border-white/5 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex flex-col items-center mb-12 sm:mb-16"
+          >
+            <div className="inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-3 py-1 text-sm font-medium text-yellow-400 mb-4 gap-2">
+              <LineChart className="w-4 h-4" /> Statistics & Experiment Design
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-bold text-white text-center max-w-2xl">Hypothesis Testing & A/B Tests</h2>
+            <p className="text-slate-400 text-center mt-4 max-w-3xl text-base sm:text-lg">
+              Conducted rigorous ablation studies on prompting, retrieval, and orchestration strategies, backing up architectural decisions with statistical hypothesis testing to identify the best configurations.
+            </p>
+          </motion.div>
+
+          <motion.div variants={fadeInUp} className="max-w-3xl mx-auto">
+            <a href="https://github.com/Smeet-Dedhia/Statistical-Salary-Analysis" target="_blank" rel="noreferrer" className="block group">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 flex flex-col md:flex-row hover:border-yellow-500/50 transition-colors">
+                <div className="absolute top-0 left-0 w-full h-1 md:w-1 md:h-full bg-yellow-500/80 group-hover:bg-yellow-400 transition-colors" />
+                <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">Statistical Analysis of University Salaries</h3>
+                    <div className="bg-black p-2 rounded-full border border-slate-800 group-hover:border-yellow-500/30 transition-colors ml-4 shrink-0">
+                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-yellow-400 transition-colors" />
+                    </div>
+                  </div>
+                  <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-6 flex-grow">
+                    A detailed Statistical Analysis of salaries of employees at a US university. Used methods like 2 Sample T-Tests and Proportion Tests to uncover bias in salaries of males and females. This study also analyzes possible biases in promotion periods.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {["R", "Statistical Testing", "T-Tests", "Proportion Tests", "Data Analysis"].map(tag => (
+                      <span key={tag} className="text-xs px-2 py-1 rounded bg-slate-950 border border-slate-800 text-slate-300">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Education Section */}
       <section className="py-12 sm:py-24 border-t border-white/5 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
