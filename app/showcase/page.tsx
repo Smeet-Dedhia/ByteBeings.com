@@ -16,6 +16,15 @@ const showcases = [
     badge: "Cost & Scale"
   },
   {
+    title: "Full Stack & Cloud",
+    description: "Architecting scalable backend systems, robust cloud infrastructures, and interactive frontend experiences.",
+    href: "/full-stack-development",
+    image: "/images/showcase/Trade-Sight-dashboard.png",
+    icon: <Database className="w-5 h-5 text-indigo-400" />,
+    color: "from-blue-600 to-indigo-600",
+    badge: "End-to-End Solutions"
+  },
+  {
     title: "Data Scientist",
     description: "Transforming raw data into actionable insights to improve healthcare outcomes, ensure compliance, and build enterprise AI infrastructures.",
     href: "/data-science",
